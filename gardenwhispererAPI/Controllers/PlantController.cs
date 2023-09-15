@@ -23,12 +23,12 @@ namespace gardenwhispererAPI.Controllers
     }
 
     [HttpGet("getgarden/{userId}")]
-    public IActionResult GetGarden(int userId)
+    public ActionResult<IEnumerable<Plant>> GetGarden(int userId)
     {
-      var user = _dbContext.UserInfos.Find(userId);
-      var garden =_dbContext.Plants.Where(plant => plant.UserId == userId).ToList();
+      
+      var garden = _dbContext.Plants.Where(p => p.UserId == userId).ToList();
 
-      return Ok(garden);
+      return (garden);
     }
 
     [HttpGet("getplant/{plantId}")]

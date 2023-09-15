@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace gardenwhispererAPI.Models;
@@ -27,5 +27,5 @@ public partial class Plant
 
     public bool? IsHealthy { get; set; }
 
-    public virtual UserInfo? User { get; set; }
+  
 }
