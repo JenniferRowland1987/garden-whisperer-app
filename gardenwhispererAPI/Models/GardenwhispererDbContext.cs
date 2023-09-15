@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
@@ -40,9 +40,7 @@ public partial class GardenwhispererDbContext : DbContext
                 .HasMaxLength(50)
                 .IsUnicode(false);
 
-            entity.HasOne(d => d.User).WithMany(p => p.Plants)
-                .HasForeignKey(d => d.UserId)
-                .HasConstraintName("FK__Plants__UserId__5EBF139D");
+          
         });
 
         modelBuilder.Entity<UserInfo>(entity =>
