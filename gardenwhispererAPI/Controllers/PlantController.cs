@@ -39,6 +39,8 @@ namespace gardenwhispererAPI.Controllers
       return plant;
     }
 
+    //if there are issues with adding plants... revisit this api call... I'm kind of on the fence about it working or not
+
     [HttpPost("addplant/{userId}")]
     public IActionResult AddPlant(int userId, [FromBody] Plant plantDetails)
     {
