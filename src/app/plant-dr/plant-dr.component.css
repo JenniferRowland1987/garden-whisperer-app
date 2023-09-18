@@ -1,0 +1,50 @@
+/* Style for the pest list container */
+.pest-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Adjust the gap between items as needed */
+  }
+  
+  /* Style for each pest item */
+  .pest-item {
+    position: relative; /* Allows positioning of the frame and cursor change */
+    cursor: pointer;
+  }
+  
+  /* Style for the circular thumbnail container */
+  .thumbnail-frame {
+    width: 100px; /* Set the width and height as needed */
+    height: 100px;
+    border-radius: 50%; /* Makes the container circular */
+    overflow: hidden; /* Hide overflow to maintain circular shape */
+    position: relative; /* Allows positioning of the frame */
+  }
+  
+  /* Style for the thumbnail image inside the circular container */
+  .thumbnail-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the circular area */
+  }
+  
+/* Style for the overlay frame element */
+.overlay-frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover; /* Ensures the background image covers the element */
+    background-position: center; /* Centers the background image */
+  }
+  
+  /* Hide the overlay frame image initially */
+  .overlay-frame img {
+    opacity: 0;
+    transition: opacity 0.2s; /* Add a smooth transition effect */
+  }
+  
+  /* Show the overlay frame image on hover */
+  .pest-item:hover .overlay-frame img {
+    opacity: 1;
+  }
