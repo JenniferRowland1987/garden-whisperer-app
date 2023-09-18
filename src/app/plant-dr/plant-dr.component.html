@@ -1,1 +1,9 @@
-<p>plant-dr works!</p>
+<div class="pest-list">
+    <div class="pest-item" *ngFor="let pest of pests" (click)="viewDetails(pest)">
+      <div class="thumbnail-frame">
+        <img [src]="pest.images[0]?.thumbnail" alt="Pest Image">
+        <div class="overlay-frame" [style.background-image]="'url(assets/your-image-file.jpg)'"></div>
+      </div>
+      <h3>{{ pest.common_name }}</h3>
+    </div>
+  </div>
