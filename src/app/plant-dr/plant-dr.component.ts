@@ -12,8 +12,8 @@ export class PlantDrComponent implements OnInit {
   pests: any[] = [];
 
   constructor(
-    private route: ActivatedRoute;
-    private plantDrService: PlantDrService;
+    private route: ActivatedRoute,
+    private plantDrService: PlantDrService,
   ){}
 
   ngOnInit() {
@@ -29,7 +29,7 @@ export class PlantDrComponent implements OnInit {
   }
 
   /*
-  From the plant details we will need to route with something like this:  
+  From the plant details on the garden page we will need to route with something like this:  
  
   viewPlantPests(commonName: string) {
     this.router.navigate(['/plantDr', commonName]);

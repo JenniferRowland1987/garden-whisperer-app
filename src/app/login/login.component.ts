@@ -20,7 +20,7 @@ export class LoginComponent {
 
   login(){
     this.userService.getAllUsers().subscribe(users => {
-      const user = users.find(u => u.username == this.username && u.password == this.password);
+      const user = users.find((u: any) => u.username == this.username && u.password == this.password);
 
       if(user){
         this.userService.userID = user.id;
