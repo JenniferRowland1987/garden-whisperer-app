@@ -1,1 +1,27 @@
-<p>garden-page works!</p>
+<div>
+    <h1>Your garden!</h1>  
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>Nickname</th>
+          <th>Common name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let plant of plants">
+          <td><img src="___"></td>
+          <td>{{ plant.nickname }}</td>
+          <td>{{ plant.commonname }}</td>
+          <td>
+            <button [routerLink]="['/plants', plant.idPlant]">View</button>  
+            <button [routerLink]="['/update-plant', plant.idPlant]">Update</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p></p>
+  <button routerLink="/add-plant">Add a plant</button>
+  <p></p>
+  <button routerLink="/getNotHealthy">See unhealthy plants</button>
+  </div>
