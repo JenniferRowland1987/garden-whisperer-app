@@ -3,9 +3,9 @@
 
     <form (ngSubmit)="onSubmit()">
         <div class="">
-            <label for="scientificname">Scientific Name:</label>
+            <label for="scientificname">Scientific Name:</label> //api
             <textarea id="scientificname" [(ngModel)]="newPlant.scientificname" name="scientificname"></textarea>        
-            <label for="commonname">Common Name:</label>
+            <label for="commonname">Common Name:</label> //api 
             <textarea id="commonname" [(ngModel)]="newPlant.commonname" name="commonname"></textarea>
             <label for="nickname">Nick Name:</label>
             <textarea id="nickname" [(ngModel)]="newPlant.nickname" name="nickname"></textarea>
@@ -13,7 +13,7 @@
             <textarea id="commonname" [(ngModel)]="newPlant.commonname" name="commonname"></textarea>
             <label for="notes">Notes:</label>
             <textarea id="notes" [(ngModel)]="newPlant.notes" name="notes"></textarea>
-            <label for="sun">Sun:</label>
+            <label for="sun">Sun:</label> //populated by api
             <textarea id="sun" [(ngModel)]="newPlant.sun" name="sun"></textarea>
             <label for="lastwater">Last Water:</label>
             <textarea id="lastwater" [(ngModel)]="newPlant.lastwater" name="lastwater"></textarea>

@@ -7,13 +7,10 @@ import { PlantService } from '../plant.service';
   styleUrls: ['./edit-plant.component.css']
 })
 export class EditPlantComponent {
-  newPlant: any ={
-    scienificname: '',
-    commonname: '',
+  editPlant: any ={
     nickname: '',
     dateplanted: '',
     notes: '',
-    sun: '',
     lastwater: '',
     lastfertilization: ''
   }
