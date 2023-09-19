@@ -12,6 +12,8 @@ import { LoginComponent } from './login/login.component';
 import { PlantDrComponent } from './plant-dr/plant-dr.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { SearchPlantComponent } from './search-plant/search-plant.component';
+import { PestDetailsComponent } from './pest-details/pest-details.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { FormsModule } from '@angular/forms';
     EditPlantComponent,
     AddPlantComponent,
     LoginComponent,
-    PlantDrComponent
+    PlantDrComponent,
+    SearchPlantComponent,
+    PestDetailsComponent
   ],
   imports: [
     BrowserModule,
