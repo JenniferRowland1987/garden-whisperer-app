@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace gardenwhispererAPI.Models;
@@ -27,5 +27,7 @@ public partial class Plant
 
     public bool? IsHealthy { get; set; }
 
-  
+    public int? PerenualId { get; set; }
+
+
 }

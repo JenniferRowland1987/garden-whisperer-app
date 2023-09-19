@@ -39,6 +39,8 @@ private apiUrl = 'https://localhost:7200/api/Plant';  //fixed the apiUrl and set
     return this.http.put<any>(url, plant);
   }
 
+
+  
   labelNotHealthy(notHealthy: any): Observable<any> {
     return this.http.post<any>(this.apiUrl, notHealthy);
   }
