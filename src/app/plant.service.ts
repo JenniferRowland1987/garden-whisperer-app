@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -11,12 +12,12 @@ import { Observable } from 'rxjs';
 export class PlantService {  
 
   
-  private apiUrl = "https://www.perenual.com/api/species-list?key=sk-F9XZ64ff9bbc686ab2138";
+  private apiUrl = "https://www.perenual.com/api/species-list?key=sk-F9XZ64ff9bbc686ab2138&";
  
   constructor(private http: HttpClient) { }
 
-  getPlant(plantId : number): Observable<any>{
-    const url = `${this.apiUrl}/${plantId}`
+  getPlant(commonName : string): Observable<any>{
+    const url = `${this.apiUrl}&q=${commonName}`
     return this.http.get<any[]>(this.apiUrl);
   }
   
