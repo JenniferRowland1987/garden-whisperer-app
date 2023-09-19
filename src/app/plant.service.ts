@@ -4,10 +4,12 @@ import { Observable } from 'rxjs';
 
 
 
+
 @Injectable({
   providedIn: 'root'
 })
-export class PlantService {
+export class PlantService {  
+
   
   private apiUrl = "https://www.perenual.com/api/species-list?key=sk-F9XZ64ff9bbc686ab2138";
  
@@ -27,5 +29,6 @@ export class PlantService {
     const url = `${this.apiUrl}/${plantId}`;
     return this.http.delete<any>(url)
   }
+
 
 }
