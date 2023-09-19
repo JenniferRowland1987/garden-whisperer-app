@@ -1,0 +1,68 @@
+.garden {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+ 
+  .plant-item {
+    width: calc(33.33% - 20px); 
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  
+  .frame-container {
+    width: 100px; 
+    height: 100px; 
+    position: center;
+  }
+  
+ 
+  .frame-overlay {
+    position: center;
+    width: 100%;
+    height: 100%;
+    background-image: url('/assets/vintageframe.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 1; 
+  }
+  
+
+  .image-container {
+    width: 100%; 
+    height: 100%; 
+    overflow: hidden;
+    border-radius: 50%;
+    position: relative;
+  }
+  
+ 
+  .plant-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 2; 
+  }
+  
+
+  .banner {
+    background-image: url('/assets/transparentscroll.png');
+    background-size: 250px;
+    text-align: center;
+    padding: 30px;
+    color: brown;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 3;
+  }
+  
+ 
+  .nickname {
+    font-size: 20px; /* Adjust the font size */
+    font-weight: bold;
+    font-family: cursive;
+    margin-bottom: 45px;
+  }

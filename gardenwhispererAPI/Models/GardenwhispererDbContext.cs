@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
@@ -40,7 +40,7 @@ public partial class GardenwhispererDbContext : DbContext
                 .HasMaxLength(50)
                 .IsUnicode(false);
 
-          
+           
         });
 
         modelBuilder.Entity<UserInfo>(entity =>

@@ -17,8 +17,8 @@ export class AddPlantComponent {
     }
 
     constructor(private plantService : PlantService ){}
-
-
+// this should be calling the garden service because we are adding plants to the garden, the plant service accesses the perenual api. 
+/*
     onSubmit(): void{
       const plantName = this.newPlant.commonName
       this.plantService.getPlant(plantName).subscribe((data) => {
@@ -27,6 +27,7 @@ export class AddPlantComponent {
         this.newPlant.scientificName = data.scientificName;
         this.newPlant.sun = data.sun;
       });
-    }
+    }  
+    */
 }
 
