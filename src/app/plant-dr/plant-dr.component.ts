@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PlantDrService } from '../plant-dr.service';
 
 @Component({
@@ -10,6 +10,7 @@ import { PlantDrService } from '../plant-dr.service';
 export class PlantDrComponent implements OnInit {
   commonName: string = 'x';
   pests: any[] = [];
+  
 
   constructor(
     private route: ActivatedRoute,
@@ -28,13 +29,16 @@ export class PlantDrComponent implements OnInit {
     });
   }
 
-  /*
+  viewDetails(pest: any){
+    this.router.navigate(['/pest-details', pest.id])
+  }
+
+}
+
+/*
   From the plant details on the garden page we will need to route with something like this:  
  
   viewPlantPests(commonName: string) {
     this.router.navigate(['/plantDr', commonName]);
   }
    */
-
-
-}
