@@ -3,23 +3,18 @@
 
     <form (ngSubmit)="onSubmit()">
         <div class="">
-            <label for="scientificname">Scientific Name:</label>
-            <textarea id="scientificname" [(ngModel)]="newPlant.scientificname" name="scientificname"></textarea>        
-            <label for="commonname">Common Name:</label>
-            <textarea id="commonname" [(ngModel)]="newPlant.commonname" name="commonname"></textarea>
-            <label for="nickname">Nick Name:</label>
-            <textarea id="nickname" [(ngModel)]="newPlant.nickname" name="nickname"></textarea>
+            <h2></h2>
+            //api info for names, sun
+            <textarea id="nickname" [(ngModel)]="editPlant.nickname" name="nickname"></textarea>
             <label for="dateplanted">Date Planted:</label>
-            <textarea id="commonname" [(ngModel)]="newPlant.commonname" name="commonname"></textarea>
+            <textarea id="commonname" [(ngModel)]="editPlant.commonname" name="commonname"></textarea>
             <label for="notes">Notes:</label>
-            <textarea id="notes" [(ngModel)]="newPlant.notes" name="notes"></textarea>
-            <label for="sun">Sun:</label>
-            <textarea id="sun" [(ngModel)]="newPlant.sun" name="sun"></textarea>
+            <textarea id="notes" [(ngModel)]="editPlant.notes" name="notes"></textarea>
             <label for="lastwater">Last Water:</label>
-            <textarea id="lastwater" [(ngModel)]="newPlant.lastwater" name="lastwater"></textarea>
+            <textarea id="lastwater" [(ngModel)]="editPlant.lastwater" name="lastwater"></textarea>
             <label for="lastfertilizer">Last Fertlization:</label>
-            <textarea id="lastfertilizer" [(ngModel)]="newPlant.lastfertilizer" name="lastfertilizer"></textarea>
-          
+            <textarea id="lastfertilizer" [(ngModel)]="editPlant.lastfertilizer" name="lastfertilizer"></textarea>
+            // button that goes straight to plant dr, based on this plant if there is a problem
             <button type="submit">Finished</button>
         </div>
         
