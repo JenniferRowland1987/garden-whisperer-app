@@ -8,12 +8,9 @@ import { PlantService } from '../plant.service';
 })
 export class AddPlantComponent {
     newPlant: any ={
-      scienificname: '',
-      commonname: '',
       nickname: '',
       dateplanted: '',
       notes: '',
-      sun: '',
       lastwater: '',
       lastfertilization: ''
       
