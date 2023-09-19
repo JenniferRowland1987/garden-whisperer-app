@@ -7,13 +7,20 @@ import {Observable} from 'rxjs';
 })
 export class GardenService {
 
-private apiUrl = 'https://localhost:7199/api/garden-whisperer-app';
+private apiUrl = 'https://localhost:7200/api/Plant';  //fixed the apiUrl and set it for my local host, you will need to change to yours when testing!!
 
-  
+  constructor(private http: HttpClient){}
 
   getPlants(): Observable<any[]> 
   {
     return this.http.get<any[]>(this.apiUrl);
+  }
+
+  //added a method to get a single users garden. 9/18 -jr
+  getGarden(userId: number): Observable<any[]>
+  {
+    const url = `${this.apiUrl}/getgarden/${userId}`;
+    return this.http.get<any[]>(url);
   }
 
   getPlant(id: number): Observable<any> {
@@ -43,7 +50,7 @@ private apiUrl = 'https://localhost:7199/api/garden-whisperer-app';
 
   getNotHealthy(): Observable<any[]> {
     
-    return this.http.get<any[]>('https://localhost:7199/getnothelthy');
+    return this.http.get<any[]>('https://localhost:7200/getnothelthy');
   }
 
 
