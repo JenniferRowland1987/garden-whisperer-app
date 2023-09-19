@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { PlantService } from '../plant.service';
+import { PlantDetailsComponent } from '../plant-details/plant-details.component';
 
 @Component({
   selector: 'app-add-plant',
@@ -13,13 +14,19 @@ export class AddPlantComponent {
       notes: '',
       lastwater: '',
       lastfertilization: ''
-      
     }
 
     constructor(private plantService : PlantService ){}
 
+
     onSubmit(): void{
-      
+      const plantName = this.newPlant.commonName
+      this.plantService.getPlant(plantName).subscribe((data) => {
+       
+        this.newPlant.commonName = data.commonName;
+        this.newPlant.scientificName = data.scientificName;
+        this.newPlant.sun = data.sun;
+      });
     }
 }
 

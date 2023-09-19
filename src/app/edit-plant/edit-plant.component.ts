@@ -16,8 +16,15 @@ export class EditPlantComponent {
   }
   constructor(private plantService : PlantService ){}
 
-onSubmit(): void{
-  
-}
-}
+
+  onSubmit(): void{
+    const plantName = this.editPlant.commonName
+    this.plantService.getPlant(plantName).subscribe((data) => {
+     
+      this.editPlant.commonName = data.commonName;
+      this.editPlant.scientificName = data.scientificName;
+      this.editPlant.sun = data.sun;
+    });
+  }
+} 
 
