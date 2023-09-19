@@ -14,6 +14,7 @@ export class PlantDrComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private plantDrService: PlantDrService,
   ){}
 
@@ -30,7 +31,7 @@ export class PlantDrComponent implements OnInit {
   }
 
   viewDetails(pest: any){
-    this.router.navigate(['/pest-details', pest.id])
+    this.router.navigate(['/pest-details', pest.id]);
   }
 
 }
