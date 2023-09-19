@@ -1,3 +1,19 @@
+<div class="garden">
+  <div *ngFor="let plant of plants" class="plant-item">
+    <div class="frame-container"> 
+      <div class="image-container">
+        <img *ngIf="plant.imageUrl" [src]="plant.imageUrl" alt="Plant Image" class="plant-image">
+      </div>
+      <div class="frame-overlay"></div>
+    </div>
+    <div class="banner">
+      <h2 class="nickname">{{ plant.nickName }}</h2>
+   
+    </div>
+  </div>
+</div>
+
+<!--
 <div>
     <h1>Your garden!</h1>  
     <table>
@@ -25,3 +41,4 @@
   <p></p>
   <button routerLink="/getNotHealthy">See unhealthy plants</button>
   </div>
+  -->

@@ -21,7 +21,7 @@ export class SearchPlantComponent implements OnInit {
       const paramName = params.get('commonName');
       if (paramName !== null) {
         this.commonName = paramName; 
-        this.plantService.getPlant(this.commonName).subscribe((data) => {
+        this.plantService.searchPlantsByCommon(this.commonName).subscribe((data) => {
           this.plant = data;
         });
       }

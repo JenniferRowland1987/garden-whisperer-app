@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace gardenwhispererAPI.Models;
@@ -13,5 +13,5 @@ public partial class UserInfo
 
     public string? Password { get; set; }
 
-   
+ 
 }
