@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { SearchPlantComponent } from './search-plant/search-plant.component';
 import { PestDetailsComponent } from './pest-details/pest-details.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
