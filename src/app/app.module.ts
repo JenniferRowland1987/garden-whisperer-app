@@ -25,8 +25,9 @@ import { PestDetailsComponent } from './pest-details/pest-details.component';
     AddPlantComponent,
     LoginComponent,
     PlantDrComponent,
-    SearchPlantComponent,
-    PestDetailsComponent
+    PestDetailsComponent,
+    PlantDetailsComponent,
+    SearchPlantComponent
   ],
   imports: [
     BrowserModule,
