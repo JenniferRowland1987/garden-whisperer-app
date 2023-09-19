@@ -19,9 +19,9 @@ const routes: Routes = [
   {path: 'garden', component: GardenPageComponent},
   {path: 'login', component: LoginComponent},
   {path: 'plant-details', component: PlantDetailsComponent},
-  {path: 'plant-dr', component: PlantDrComponent},
+  {path: 'plant-dr/:commonName', component: PlantDrComponent},
   {path: 'weather', component: WeatherComponent},
-  {path: 'pest-details', component: PestDetailsComponent},
+  {path: 'pest-details/:pestId', component: PestDetailsComponent},
   {path: 'search-plant', component: SearchPlantComponent},
 
 ];
