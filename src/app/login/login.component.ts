@@ -15,22 +15,28 @@ export class LoginComponent {
   password: string = '';
   loginFail: boolean = false;
   mushroomUrl: string = 'assets/transparentmushroom.png';
+  
 
-  constructor(private userService: UserService){}
+  constructor(private userService: UserService, private router: Router){}
 
-  login(){
+  login() {
+
+    console.log('Attempting username:', this.username, 'and password:', this.password);
+  
     this.userService.getAllUsers().subscribe(users => {
-      const user = users.find((u: any) => u.username == this.username && u.password == this.password);
 
-      if(user){
+      console.log('Users from service:', users);
+  
+      const user = users.find((u: any) => u.userName === this.username && u.password === this.password);
+  
+      if (user) {
+        console.log('Login successful! User ID:', user.id);
         this.userService.userID = user.id;
-        //send user to garden
-        //this.router.navigate(['/garden'])
-
-      }else{
+        this.router.navigate(['/garden', user.id]);
+      } else {
+        console.log('Login failed.');
         this.loginFail = true;
         this.mushroomUrl = 'assets/badrequestmushroom.png';
-        //send user to login failure to either prompt to create or try login again
       }
     });
   }
