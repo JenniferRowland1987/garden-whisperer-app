@@ -20,7 +20,6 @@ ngOnInit(): void {
   this.weatherService.getWeather().subscribe(
     (data: any) => {
     this.weatherData = data;
-
     },
 (error) => {
   console.error(error);
