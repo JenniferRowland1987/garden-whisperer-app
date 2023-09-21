@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { PlantService } from '../plant.service';
+import { GardenService } from '../garden.service';
 import { PlantDetailsComponent } from '../plant-details/plant-details.component';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-add-plant',
@@ -16,18 +17,14 @@ export class AddPlantComponent {
       lastfertilization: ''
     }
 
-    constructor(private plantService : PlantService ){}
-// this should be calling the garden service because we are adding plants to the garden, the plant service accesses the perenual api. 
-/*
-    onSubmit(): void{
-      const plantName = this.newPlant.commonName
-      this.plantService.getPlant(plantName).subscribe((data) => {
-       
-        this.newPlant.commonName = data.commonName;
-        this.newPlant.scientificName = data.scientificName;
-        this.newPlant.sun = data.sun;
+    constructor(private gardenService : GardenService,
+      private route: ActivatedRoute){}
+
+    onSubmit(): void {
+      this.gardenService.addPlant(this.newPlant).subscribe((response) => {
+        console.log('Plant added successfully!', response);
+        this.newPlant = {}; 
       });
-    }  
-    */
+    }
 }
 

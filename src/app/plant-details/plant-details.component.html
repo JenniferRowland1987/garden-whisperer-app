@@ -1,0 +1,29 @@
+
+
+<div class="plant-details">
+  <h2>Plant Details</h2>
+
+  <div *ngIf="plant">
+    <!-- Display plant details -->
+    <p><strong>Common Name:</strong> {{ plant.commonName }}</p>
+    <p><strong>Scientific Name:</strong> {{ plant.scienificName }}</p>
+    <p><strong>Sunlight:</strong> {{ plant.sun }}</p>
+    <p><strong>Nickname:</strong> {{ plant.nickName }}</p>
+    <p><strong>Date Planted:</strong> {{ plant.datePlanted }}</p>
+    <p><strong>Last Fertlization:</strong> {{ plant.lastFertilization }}</p>
+    <p><strong>Last Water:</strong> {{ plant.lastWater }}</p>
+    <p><strong>Notes:</strong> {{ plant.notes }}</p>
+    <!-- Add other plant details here based on your data structure -->
+    
+    <!-- Display plant image if available -->
+    <div *ngIf="plant.imageUrl">
+      <img src="{{ plant.imageUrl }}" alt="Plant Image">
+    </div>
+  </div>
+
+  <!-- Handle the case when plant details are not available -->
+  <div *ngIf="!plant">
+    <p>Plant details not found.</p>
+  </div>
+  <button routerLink='/garden:userId'>back to garden!</button>
+</div>

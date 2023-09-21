@@ -25,7 +25,8 @@ private apiUrl = 'https://localhost:7200/api/Plant';  //fixed the apiUrl and set
 
   getPlant(id: number): Observable<any> {
     console.log(id)
-    const url = `${this.apiUrl}/${id}`;
+    const url = `${this.apiUrl}/getPlant/${id}`;
+    console.log(url)
     return this.http.get<any>(url);
   }
 
