@@ -40,7 +40,7 @@ public partial class GardenwhispererDbContext : DbContext
                 .HasMaxLength(50)
                 .IsUnicode(false);
 
-           
+
         });
 
         modelBuilder.Entity<UserInfo>(entity =>
@@ -49,6 +49,9 @@ public partial class GardenwhispererDbContext : DbContext
 
             entity.ToTable("UserInfo");
 
+            entity.Property(e => e.City)
+                .HasMaxLength(50)
+                .IsUnicode(false);
             entity.Property(e => e.Name)
                 .HasMaxLength(100)
                 .IsUnicode(false);

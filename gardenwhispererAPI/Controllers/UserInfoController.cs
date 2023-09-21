@@ -48,6 +48,7 @@ namespace gardenwhispererAPI.Controllers
       existingUser.Name = updatedUser.Name;
       existingUser.UserName = updatedUser.UserName;
       existingUser.Password = updatedUser.Password;
+      existingUser.City = updatedUser.City;
 
       _dbContext.Entry(existingUser).State = EntityState.Modified;
 

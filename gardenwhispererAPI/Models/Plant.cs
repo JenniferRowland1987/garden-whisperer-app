@@ -29,5 +29,5 @@ public partial class Plant
 
     public int? PerenualId { get; set; }
 
-
+    
 }
