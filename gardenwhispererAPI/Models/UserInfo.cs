@@ -13,5 +13,7 @@ public partial class UserInfo
 
     public string? Password { get; set; }
 
- 
+    public string? City { get; set; }
+
+    
 }

@@ -53,5 +53,13 @@ export class EditPlantComponent implements OnInit {
       this.router.navigate(['/plant-details', this.id]);
     });
   }
+
+  navigateToGarden(){
+    this.router.navigate(['/garden', this.plant.userId]);
+  }
+
+  navigateToDoctor(){
+    this.router.navigate(['/plant-dr', this.plant.commonName]);
+  }
 } 
 
