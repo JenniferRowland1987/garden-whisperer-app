@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PlantService } from '../plant.service';
 import { GardenService } from '../garden.service';
 import { PlantDrService } from '../plant-dr.service';
+import { ActivatedRoute } from '@angular/router';
 
 
 
@@ -11,24 +12,40 @@ import { PlantDrService } from '../plant-dr.service';
   styleUrls: ['./plant-details.component.css']
 })
 export class PlantDetailsComponent {
-
+  plantInfo: number = 0;
+  plant: any;
   constructor(
     private gardenService:GardenService,
     private plantService: PlantService,
-    private plantDrService: PlantDrService
+    private plantDrService: PlantDrService,
+    private route: ActivatedRoute
+
     ){}
+
     ngOnInit() {
-     
-      this.plantService.searchPlantsByCommon
-      this.gardenService.getPlant
-      this.plantDrService.getPests
-  
+      this.route.paramMap.subscribe((params)=> {
+        const plantid = params.get('plantid');
+        if(plantid){
+          this.plantInfo = +plantid;
+          this.getPlantDetails();        
+        }
+      });
     }
-  //this pulls data from the api as well as from the added plant and route to the pest api -
-  // this is where it will ask you if youre having problems
+
+    getPlantDetails() {
+      this.gardenService.getPlant(this.plantInfo).subscribe((plants) => {
+        this.plant = plants;
+          const perenualId = this.plant.perenualId;
+          if (perenualId) {
+            this.plantService.getPlantById(perenualId).subscribe((data) => {
+              plants.imageUrl = data.default_image?.regular_url;
+            });
+          }
+      });
+  }
 }
 
-export class perenualPlant {
+/*export class perenualPlant {
   id: number = 0;
   common_name: string = '';
   scientific_name: string[] = [];
@@ -37,4 +54,6 @@ export class perenualPlant {
   watering: string = '';
   sunlight: string[] = [];
 
+
 }
+*/
