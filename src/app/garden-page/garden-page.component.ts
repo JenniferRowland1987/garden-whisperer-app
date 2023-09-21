@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GardenService } from '../garden.service';
 import { ActivatedRoute } from '@angular/router';
 import { PlantService } from '../plant.service';
+import { WeatherService } from '../weather.service';
 
 @Component({
   selector: 'app-garden-page',
