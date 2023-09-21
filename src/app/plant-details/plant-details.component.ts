@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { PlantService } from '../plant.service';
 import { GardenService } from '../garden.service';
 import { PlantDrService } from '../plant-dr.service';
+
 import { ActivatedRoute, Router } from '@angular/router';
+
 
 
 
@@ -21,6 +23,9 @@ export class PlantDetailsComponent {
     private route: ActivatedRoute,
     private router: Router
 
+ 
+
+
     ){}
 
     ngOnInit() {
@@ -31,10 +36,12 @@ export class PlantDetailsComponent {
         if(plantid){
           this.plantInfo = +plantid;
           console.log(`plantid: ${plantid}`);
-          this.getPlantDetails();        
+          this.getPlantDetails();  
+                
         }
       });
     }
+
 
     getPlantDetails() {
       console.log("get plant details")
