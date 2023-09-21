@@ -5,6 +5,7 @@
 <div class="garden">
   <div *ngFor="let plant of plants" class="plant-item">
     <div class="frame-container"> 
+      
       <div class="image-container">
         <img *ngIf="plant.imageUrl" [src]="plant.imageUrl" alt="Plant Image" class="plant-image">
       </div>
