@@ -3,6 +3,8 @@ import { PlantService } from '../plant.service';
 import { GardenService } from '../garden.service';
 import { PlantDrService } from '../plant-dr.service';
 import { ActivatedRoute } from '@angular/router';
+import { UserService } from '../user.service';
+
 
 
 
@@ -18,7 +20,8 @@ export class PlantDetailsComponent {
     private gardenService:GardenService,
     private plantService: PlantService,
     private plantDrService: PlantDrService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private userService : UserService
 
     ){}
 
@@ -30,10 +33,12 @@ export class PlantDetailsComponent {
         if(plantid){
           this.plantInfo = +plantid;
           console.log(`plantid: ${plantid}`);
-          this.getPlantDetails();        
+          this.getPlantDetails();  
+                
         }
       });
     }
+
 
     getPlantDetails() {
       console.log("get plant details")

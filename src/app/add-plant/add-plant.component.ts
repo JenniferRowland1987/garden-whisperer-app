@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { GardenService } from '../garden.service';
 import { PlantDetailsComponent } from '../plant-details/plant-details.component';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-add-plant',
@@ -16,7 +17,8 @@ export class AddPlantComponent {
       lastfertilization: ''
     }
 
-    constructor(private gardenService : GardenService ){}
+    constructor(private gardenService : GardenService,
+      private route: ActivatedRoute){}
 
     onSubmit(): void {
       this.gardenService.addPlant(this.newPlant).subscribe((response) => {
