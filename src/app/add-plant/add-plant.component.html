@@ -1,12 +1,9 @@
 <div class="center">
     <h1>Add a Plant</h1>
 
- <!--  THis will need to be updated to reflect the changed service 
-
     <form (ngSubmit)="onSubmit()">
         <div class="">
-            //add scientific, common, and sun from api - drop downs for dates
-            
+          
             <label for="nickname">Nick Name:</label>
             <textarea id="nickname" [(ngModel)]="newPlant.nickname" name="nickname"></textarea>
             <label for="dateplanted">Date Planted:</label>
@@ -18,12 +15,9 @@
             <label for="lastfertilizer">Last Fertlization:</label>
             <textarea id="lastfertilizer" [(ngModel)]="newPlant.lastfertilizer" name="lastfertilizer"></textarea>
           
-            <button type="submit">Add Plant</button>
+            <button type="submit">Add your new Plant</button>
         </div>
         
     </form>
     <button routerLink="/garden">back to garden!</button>
 </div>
-
-this is the closing tag for the comments below
--->

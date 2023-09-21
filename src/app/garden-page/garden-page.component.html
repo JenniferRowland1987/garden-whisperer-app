@@ -5,9 +5,11 @@
 <div class="garden">
   <div *ngFor="let plant of plants" class="plant-item">
     <div class="frame-container"> 
+      <a [routerLink]="['/plant-details', plant.id]">
       <div class="image-container">
         <img *ngIf="plant.imageUrl" [src]="plant.imageUrl" alt="Plant Image" class="plant-image">
-      </div>
+        
+      </div> </a>
       <div class="frame-overlay"></div>
     </div>
     <div class="banner">
@@ -17,7 +19,6 @@
   </div>
 </div>
 
-<!--
 <div>
     <h1>Your garden!</h1>  
     <table>
@@ -34,15 +35,14 @@
           <td>{{ plant.nickname }}</td>
           <td>{{ plant.commonname }}</td>
           <td>
-            <button [routerLink]="['/plants', plant.idPlant]">View</button>  
-            <button [routerLink]="['/update-plant', plant.idPlant]">Update</button>
+            <button [routerLink]="['/plants', plant.id]">View</button>  
+            <button [routerLink]="['/edit-plant', plant.id]">Update</button>
           </td>
         </tr>
       </tbody>
     </table>
     <p></p>
-  <button routerLink="/add-plant">Add a plant</button>
+    <button [routerLink]="['/add-plant', plants]">Add Plant</button>
   <p></p>
   <button routerLink="/getNotHealthy">See unhealthy plants</button>
   </div>
-  -->

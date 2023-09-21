@@ -21,21 +21,10 @@ export class PlantService {
     return this.http.get<any[]>(this.apiUrl);
   }
 
-  //added a method to pull a plant by id from the perenual api
+ 
   getPlantById(id: number): Observable<any> {
     const url = `https://www.perenual.com/api/species/details/${id}?key=sk-F9XZ64ff9bbc686ab2138`;
     return this.http.get<any>(url);
   }
-  
-  //this service deals with an external api, I don't think we have the authority to add or delete from their database.
-  /*addPlant(plantId: number){
-    const plantData = (plantId)
-    return this.http.post<any>(this.apiUrl, plantData);
-  }
-  
-  deletePlant(plantId: number){
-    const url = `${this.apiUrl}/${plantId}`;
-    return this.http.delete<any>(url)
-  }*/
 
 }
