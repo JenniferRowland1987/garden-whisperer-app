@@ -23,21 +23,27 @@ export class PlantDetailsComponent {
     ){}
 
     ngOnInit() {
+      console.log('init')
       this.route.paramMap.subscribe((params)=> {
-        const plantid = params.get('plantid');
+        const plantid = params.get('id');
+        console.log(`plantid: ${plantid}`);
         if(plantid){
           this.plantInfo = +plantid;
+          console.log(`plantid: ${plantid}`);
           this.getPlantDetails();        
         }
       });
     }
 
     getPlantDetails() {
-      this.gardenService.getPlant(this.plantInfo).subscribe((plants) => {
+      console.log("get plant details")
+      this.gardenService.getPlant(this.plantInfo).subscribe((plants) => { 
+        //console.log(`plants: ${JSON.stringify(plants)}`);
         this.plant = plants;
           const perenualId = this.plant.perenualId;
           if (perenualId) {
             this.plantService.getPlantById(perenualId).subscribe((data) => {
+              //console.log(`data: ${JSON.stringify(data)}`);
               plants.imageUrl = data.default_image?.regular_url;
             });
           }
