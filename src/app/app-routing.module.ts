@@ -15,7 +15,7 @@ const routes: Routes = [
 
   {path: '', redirectTo: 'login', pathMatch: 'full'},
   {path: 'addplant', component: AddPlantComponent},
-  {path: 'edit-plant', component: EditPlantComponent},
+  {path: 'edit-plant/:id', component: EditPlantComponent},
   {path: 'garden/:userId', component: GardenPageComponent}, //updated routing to take a userid parameter
   {path: 'login', component: LoginComponent},
   {path: 'plant-details/:id', component: PlantDetailsComponent},
