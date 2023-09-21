@@ -6,6 +6,12 @@
   <div *ngIf="plant">
     <!-- Display plant details -->
     <p><strong>Common Name:</strong> {{ plant.commonName }}</p>
+
+    <p><strong>Scientific Name:</strong> {{ plant.scientificName }}</p>
+    <p>Water Requirements: {{plant.watering}}</p>
+    
+  
+
     <p><strong>Scientific Name:</strong> {{ plant.scienificName }}</p>
     <p><strong>Sunlight:</strong> {{ plant.sun }}</p>
     <p><strong>Nickname:</strong> {{ plant.nickName }}</p>
@@ -13,6 +19,7 @@
     <p><strong>Last Fertlization:</strong> {{ plant.lastFertilization }}</p>
     <p><strong>Last Water:</strong> {{ plant.lastWater }}</p>
     <p><strong>Notes:</strong> {{ plant.notes }}</p>
+
     <!-- Add other plant details here based on your data structure -->
     
     <!-- Display plant image if available -->
@@ -27,3 +34,5 @@
   </div>
   <button routerLink='/garden:userId'>back to garden!</button>
 </div>
+<button (click)="navigateToGarden()">Back to Garden</button>
+<button (click)="navigateToEdit()">Update Plant</button>
