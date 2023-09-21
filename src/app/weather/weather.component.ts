@@ -12,6 +12,7 @@ weatherData: any;
 temp: number=0;
 city: any;
 state: string='';
+location: string='';
 message: string='';
 
 constructor(private weatherService: WeatherService){}
@@ -27,20 +28,14 @@ ngOnInit(): void {
 );
 }
 
-coverPlants(){
-if (this.temp <= 4.5)
+checkPlants() {
+if (this.temp <= 40)
 {this.message='Cover your outdoor plants, it is getting cold!'}
 
-else{}
-}
-
-checkWater(){
-
-  if (this.temp >=26)
+if (this.temp >=80)
   {this.message='Consider watering your outdoor plants...it is getting hot!'}
-  
-  else{}
 
+else{}
 }
 
 
