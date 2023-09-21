@@ -7,6 +7,7 @@
     <!-- Display plant details -->
     <p><strong>Common Name:</strong> {{ plant.commonName }}</p>
     <p><strong>Scientific Name:</strong> {{ plant.scientificName }}</p>
+    <p>Water Requirements: {{plant.watering}}</p>
     
   
     <!-- Add other plant details here based on your data structure -->
@@ -22,3 +23,5 @@
     <p>Plant details not found.</p>
   </div>
 </div>
+<button (click)="navigateToGarden()">Back to Garden</button>
+<button (click)="navigateToEdit()">Update Plant</button>

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PlantService } from '../plant.service';
 import { GardenService } from '../garden.service';
 import { PlantDrService } from '../plant-dr.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 
@@ -18,7 +18,8 @@ export class PlantDetailsComponent {
     private gardenService:GardenService,
     private plantService: PlantService,
     private plantDrService: PlantDrService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
 
     ){}
 
@@ -45,9 +46,22 @@ export class PlantDetailsComponent {
             this.plantService.getPlantById(perenualId).subscribe((data) => {
               //console.log(`data: ${JSON.stringify(data)}`);
               plants.imageUrl = data.default_image?.regular_url;
+              plants.watering = data.watering;
             });
           }
       });
+  }
+
+  navigateToGarden(){
+    this.router.navigate(['/garden', this.plant.userId]);
+  }
+
+  navigateToEdit(){
+    this.router.navigate(['/edit-plant', this.plant.id]);
+  }
+
+  navigateToDoctor(){
+    this.router.navigate([]);
   }
 }
 
