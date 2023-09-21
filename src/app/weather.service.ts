@@ -7,14 +7,17 @@ import {Observable} from 'rxjs';
 })
 export class WeatherService {
 
-private apiUrl = 'http://api.airvisual.com/v2/nearest_city?key=eb16f705-fc63-4409-bda6-6da23b2ec82d';
+private apiKey = 'f1adff9ed20b4f4ba6603413232109';
+private apiUrl = 'http://api.weatherapi.com/v1/current.json';
+private location = '';
 
 constructor(private http: HttpClient) { }
 
-getWeather(): Observable<any[]> 
-  {
-    return this.http.get<any[]>(this.apiUrl);
-  }
+getWeather() {
+  const url = '${this.apiUrl}?key=${this.apiKey}&q=${this.location}';
+return this.http.get(url);
+}
+
 
 
 
