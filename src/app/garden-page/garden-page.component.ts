@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GardenService } from '../garden.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PlantService } from '../plant.service';
 import { WeatherService } from '../weather.service';
 
@@ -16,7 +16,8 @@ export class GardenPageComponent implements OnInit{
 
   constructor(
     private gardenService:GardenService,
-    private route: ActivatedRoute,
+    private route: ActivatedRoute, 
+    private router: Router,
     private plantService: PlantService
     ){}
 
@@ -46,6 +47,9 @@ export class GardenPageComponent implements OnInit{
   });
 }
 
+navigateToAdd(){
+  this.router.navigate(['/addplant']);
+}
 
 
 //haven't used the below methods in this component yet, consider removing if we don't need them.

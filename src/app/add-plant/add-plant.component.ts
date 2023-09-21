@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { GardenService } from '../garden.service';
-import { PlantDetailsComponent } from '../plant-details/plant-details.component';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-plant',
@@ -9,16 +8,19 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./add-plant.component.css']
 })
 export class AddPlantComponent {
-    newPlant: any ={
-      nickname: '',
-      dateplanted: '',
-      notes: '',
-      lastwater: '',
-      lastfertilization: ''
-    }
+  id: number = 0;
+  plant: any = {};
+  newPlant: any ={
+    nickname: '',
+    dateplanted: '',
+    notes: '',
+    lastwater: '',
+    lastfertilization: ''
+  }
 
     constructor(private gardenService : GardenService,
-      private route: ActivatedRoute){}
+      private route: ActivatedRoute,
+      private router: Router){}
 
     onSubmit(): void {
       this.gardenService.addPlant(this.newPlant).subscribe((response) => {
@@ -26,5 +28,10 @@ export class AddPlantComponent {
         this.newPlant = {}; 
       });
     }
+
+    navigateToGarden(){
+      this.router.navigate(['/garden']);
+    }
+  
 }
 

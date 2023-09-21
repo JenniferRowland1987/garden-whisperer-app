@@ -20,29 +20,5 @@
 </div>
 
 <div>
-    <h1>Your garden!</h1>  
-    <table>
-      <thead>
-        <tr>
-          <th></th>
-          <th>Nickname</th>
-          <th>Common name</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let plant of plants">
-          <td><img src="___"></td>
-          <td>{{ plant.nickname }}</td>
-          <td>{{ plant.commonname }}</td>
-          <td>
-            <button [routerLink]="['/plants', plant.id]">View</button>  
-            <button [routerLink]="['/edit-plant', plant.id]">Update</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <p></p>
-    <button [routerLink]="['/add-plant', plants]">Add Plant</button>
-  <p></p>
-  <button routerLink="/getNotHealthy">See unhealthy plants</button>
-  </div>
+  <button (click)="navigateToAdd()">Add Plant</button>
+</div>
