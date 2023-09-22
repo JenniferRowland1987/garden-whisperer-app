@@ -9,13 +9,21 @@ export class UserService {
 
   private apiUrl = "https://localhost:7200/api/UserInfo"
 
-  public userID = 0
+  public userID = 0;
 
   constructor(private http: HttpClient){}
 
   getAllUsers(): Observable<any>
   {
     return this.http.get<any[]>(this.apiUrl);
+  }
+
+  getUserID(){
+    return this.userID;
+  }
+
+  setUserID(id: number){
+    this.userID = id;
   }
 
   getUser(id: number): Observable<any>

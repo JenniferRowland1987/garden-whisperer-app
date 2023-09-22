@@ -1,5 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { WeatherService } from '../weather.service';
+import { UserService } from '../user.service';
+
 
 @Component({
   selector: 'app-weather',
@@ -15,17 +17,32 @@ state: string='';
 location: string='';
 message: string='';
 
-constructor(private weatherService: WeatherService){}
+
+
+constructor(
+  private weatherService: WeatherService,
+  private userService: UserService
+  ){}
+
 
 ngOnInit(): void {
-  this.weatherService.getWeather().subscribe(
-    (data: any) => {
-    this.weatherData = data;
-    },
-(error) => {
-  console.error(error);
+  console.log(this.userService.userID);
+ this.getCity();  
+} 
+
+getCity(){
+  this.userService.getUser(this.userService.getUserID()).subscribe((user) => {
+    this.city = user.city;   
+    this.getWeather(); 
+  });
 }
-);
+
+getWeather() {
+  this.weatherService.getWeather(this.city).subscribe((data: any) => {
+    this.weatherData = data;
+    this.temp = this.weatherData.current.temp_c;
+    this.checkPlants(); 
+  });
 }
 
 checkPlants() {
@@ -35,11 +52,14 @@ if (this.temp <= 40)
 if (this.temp >=80)
   {this.message='Consider watering your outdoor plants...it is getting hot!'}
 
-else{}
+else{
+  this.message='nice weather today! not too hot, not too cold!'}
+}
+
 }
 
 
 
-}
+
 
 
