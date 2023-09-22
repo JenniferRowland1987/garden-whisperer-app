@@ -7,14 +7,14 @@ import {Observable} from 'rxjs';
 })
 export class WeatherService {
 
-private apiKey = '5d4156603a6547da9d6230956232109';
-private apiUrl = 'http://api.weatherapi.com/v1/current.json';
+//private apiKey = '5d4156603a6547da9d6230956232109';
+private apiUrl = 'http://api.weatherapi.com/v1/current.json?key=5d4156603a6547da9d6230956232109&q=';
 //private location = '';
 
 constructor(private http: HttpClient) { }
 
 getWeather(city: string): Observable<any> {
-  const url = '${this.apiUrl}?key=${this.apiKey}&q=${city}';
+  const url = `${this.apiUrl}${city}`;
   return this.http.get<any>(url);
 }
 

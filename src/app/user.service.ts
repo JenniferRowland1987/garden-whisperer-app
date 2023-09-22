@@ -9,7 +9,7 @@ export class UserService {
 
   private apiUrl = "https://localhost:7200/api/UserInfo"
 
-  public userID = 0;
+  public userID = 2;
 
   constructor(private http: HttpClient){}
 
@@ -21,7 +21,7 @@ export class UserService {
   getUserID(){
     return this.userID;
   }
-
+   
   setUserID(id: number){
     this.userID = id;
   }
