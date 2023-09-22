@@ -16,6 +16,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class PlantDetailsComponent {
   plantInfo: number = 0;
   plant: any;
+  
   constructor(
     private gardenService:GardenService,
     private plantService: PlantService,
@@ -54,6 +55,8 @@ export class PlantDetailsComponent {
               //console.log(`data: ${JSON.stringify(data)}`);
               plants.imageUrl = data.default_image?.regular_url;
               plants.watering = data.watering;
+              plants.sunlight = data.sunlight;
+              
             });
           }
       });
