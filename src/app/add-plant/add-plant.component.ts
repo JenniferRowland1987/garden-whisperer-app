@@ -39,14 +39,12 @@ export class AddPlantComponent {
         this.router.navigate(['/plant-details', this.plant.id]);
       });
     }
-    
+    //adding a plant from button in garden page will take you to search plant that will use the perenual api, then once you choose the
+    //plant it will take you to the add plant form, which will take you to the plant details for that new plant
     navigateToGarden(){
       this.router.navigate(['/garden', this.user.getUserID()]);
     }
 
-    navigateToPlantDetails(){
-      this.router.navigate(['/plant-details', this.plant.id])
-    }
 }
 
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PlantService } from '../plant.service';
+import { Route } from '@angular/router';
 
 @Component({
   selector: 'app-search-plant',
@@ -14,6 +15,7 @@ export class SearchPlantComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private plantService: PlantService,
+    private router: Router
   ){}
 
   ngOnInit() {
@@ -26,5 +28,8 @@ export class SearchPlantComponent implements OnInit {
         });
       }
     });
+  }
+  navigateToAddPlant(){
+    this.router.navigate(['/addplant', this.plant]);
   }
 }
