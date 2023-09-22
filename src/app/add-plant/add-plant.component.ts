@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { GardenService } from '../garden.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { PlantService } from '../plant.service';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-add-plant',
@@ -19,7 +21,9 @@ export class AddPlantComponent {
   }
 
     constructor(private gardenService : GardenService,
+      private plantService: PlantService,
       private route: ActivatedRoute,
+      private user: UserService,
       private router: Router){}
 
     onSubmit(): void {
@@ -29,9 +33,20 @@ export class AddPlantComponent {
       });
     }
 
-    navigateToGarden(){
-      this.router.navigate(['/garden']);
+    addPlant(){
+      this.gardenService.addPlant(this.newPlant).subscribe(() => {
+        console.log('Plant added successfully!');
+        this.router.navigate(['/plant-details', this.plant.id]);
+      });
     }
-  
+    
+    navigateToGarden(){
+      this.router.navigate(['/garden', this.user.getUserID()]);
+    }
+
+    navigateToPlantDetails(){
+      this.router.navigate(['/plant-details', this.plant.id])
+    }
 }
+
 
