@@ -31,7 +31,7 @@ export class LoginComponent {
   
       if (user) {
         console.log('Login successful! User ID:', user.id);
-        this.userService.userID = user.id;
+        this.userService.setUserID(user.id)
         this.router.navigate(['/garden', user.id]);
       } else {
         console.log('Login failed.');
