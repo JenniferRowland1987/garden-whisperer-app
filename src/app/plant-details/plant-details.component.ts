@@ -16,6 +16,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class PlantDetailsComponent {
   plantInfo: number = 0;
   plant: any;
+  
   constructor(
     private gardenService:GardenService,
     private plantService: PlantService,
