@@ -18,6 +18,14 @@ export class UserService {
     return this.http.get<any[]>(this.apiUrl);
   }
 
+  getUserID(){
+    return this.userID;
+  }
+
+  setUserID(id: number){
+    this.userID = id;
+  }
+
   getUser(id: number): Observable<any>
   {
     const url = `${this.apiUrl}/${id}`;

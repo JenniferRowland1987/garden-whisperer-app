@@ -31,7 +31,7 @@ ngOnInit(): void {
 } 
 
 getCity(){
-  this.userService.getUser(this.userService.userID).subscribe((user) => {
+  this.userService.getUser(this.userService.getUserID()).subscribe((user) => {
     this.city = user.city;   
     this.getWeather(); 
   });
