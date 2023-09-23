@@ -27,7 +27,7 @@ export class AddPlantComponent {
       private router: Router){}
 
     onSubmit(): void {
-      this.gardenService.addPlant(this.newPlant).subscribe((response) => {
+      this.gardenService.addPlant(this.plant).subscribe((response) => {
         console.log('Plant added successfully!', response);
         this.newPlant = {}; 
       });
