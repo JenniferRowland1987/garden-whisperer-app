@@ -34,9 +34,9 @@ export class AddPlantComponent {
     }
 
     addPlant(){
-      this.gardenService.addPlant(this.newPlant).subscribe(() => {
+      this.gardenService.addPlant(this.plant).subscribe(() => {
         console.log('Plant added successfully!');
-        this.router.navigate(['/plant-details', this.plant.id]);
+        this.router.navigate(['/plant-details']);
       });
     }
     //adding a plant from button in garden page will take you to search plant that will use the perenual api, then once you choose the
