@@ -16,7 +16,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class PlantDetailsComponent {
   plantInfo: number = 0;
   plant: any;
-  
+
   constructor(
     private gardenService:GardenService,
     private plantService: PlantService,
@@ -71,7 +71,7 @@ export class PlantDetailsComponent {
   }
 
   navigateToDoctor(){
-    this.router.navigate([]);
+    this.router.navigate(['/plant-dr', this.plant.commonName]);
   }
 }
 

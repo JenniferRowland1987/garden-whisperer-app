@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { PestApiResponse } from './models/pest.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,9 +12,9 @@ export class PlantDrService {
 
   constructor(private http: HttpClient) { }
 
-  getPests(commonName: string): Observable<any[]>
+  getPests(commonName: string): Observable<PestApiResponse>
   {
     const url = `${this.apiUrl}${commonName}`;
-    return this.http.get<any[]>(url);    
+    return this.http.get<PestApiResponse>(url);    
   }
 }
