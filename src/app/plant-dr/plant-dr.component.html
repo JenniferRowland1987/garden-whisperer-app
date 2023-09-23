@@ -4,7 +4,7 @@
 
 <div class="pest-details" *ngFor="let pest of pests">
   <h2>{{ pest.common_name }}</h2>
-  <img [src]="pest.images[0]?.regular_url" alt="{{ pest.common_name }} Image" class="pest-image"/>
+  <img [src]="pest.images[0].regular_url" alt="{{ pest.common_name }} Image" class="pest-image"/>
 
   <h3>Description:</h3>
   <ul>
