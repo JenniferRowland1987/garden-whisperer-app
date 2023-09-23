@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PlantDrService } from '../plant-dr.service';
+import { Pest, PestApiResponse } from '../models/pest.model';
+import { UserService } from '../user.service';
+
 
 @Component({
   selector: 'app-plant-dr',
@@ -8,27 +11,56 @@ import { PlantDrService } from '../plant-dr.service';
   styleUrls: ['./plant-dr.component.css']
 })
 export class PlantDrComponent implements OnInit {
-  commonName: string = 'x';
-  pests: any[] = [];
+  commonName: string = '';
+  
+  pests: Pest[] = [];
   
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private plantDrService: PlantDrService,
+    private user: UserService
   ){}
 
-  ngOnInit() {
-    this.route.paramMap.subscribe((params) => {
-      const paramName = params.get('commonName');
-      if (paramName !== null) {
-        this.commonName = paramName; 
-        this.plantDrService.getPests(this.commonName).subscribe((data) => {
-          this.pests = data;
-        });
+  ngOnInit(): void {
+    
+    this.route.paramMap.subscribe(params => {
+      const commonName = params.get('commonName');
+      if (commonName !== null) {
+        this.commonName = commonName;
+        console.log(this.commonName);
+        this.getPlantData();
+      } else {
+        console.log('error loading common name');
       }
     });
   }
+
+  getPlantData() {
+    this.plantDrService.getPests(this.commonName).subscribe((data: PestApiResponse) => {
+      console.log(data);
+      
+      this.pests = data.data || [];
+      console.log('pests array', this.pests);
+    });
+  }
+
+  navigateToGarden(){
+    this.router.navigate(['/garden', this.user.getUserID()]);
+  }
+
+  /*getPlantData() {
+    this.plantDrService.getPests(this.commonName).subscribe((data: pest) => {
+      console.log(data);
+      this.data = data || [];      
+      console.log('pests array',this.data);
+
+
+    });
+  }
+*/
+
 
   viewDetails(pest: any){
     this.router.navigate(['/pest-details', pest.id]);
