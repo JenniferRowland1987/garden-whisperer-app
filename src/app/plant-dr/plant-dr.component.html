@@ -1,9 +1,25 @@
-<div class="pest-list">
-    <div class="pest-item" *ngFor="let pest of pests" (click)="viewDetails(pest)">
-      <div class="thumbnail-frame">
-        <img [src]="pest.images[0]?.thumbnail" alt="Pest Image">
-        <div class="overlay-frame" [style.background-image]="'url(assets/your-image-file.jpg)'"></div>
-      </div>
-      <h3>{{ pest.common_name }}</h3>
-    </div>
-  </div>
+<h1>Common Pests found for: {{ commonName }}</h1>
+
+<button (click)="navigateToGarden()">back to garden!</button>
+
+<div class="pest-details" *ngFor="let pest of pests">
+  <h2>{{ pest.common_name }}</h2>
+  <img [src]="pest.images[0].regular_url" alt="{{ pest.common_name }} Image" class="pest-image"/>
+
+  <h3>Description:</h3>
+  <ul>
+    <li *ngFor="let description of pest.description">{{ description.description }}</li>
+  </ul>
+
+  <h3>Solution:</h3>
+  <ul>
+    <li *ngFor="let solution of pest.solution">{{ solution.description }}</li>
+  </ul>
+</div>
+
+<button (click)="navigateToGarden()">back to garden!</button>
+
+
+
+
+
