@@ -1,2 +1,27 @@
-<p>search-plant works!</p>
-//this will route to add a plant with the form, but it will take the plant ID - adding the three we dont add
+
+
+      <div>
+        <h1>Plant Search</h1>
+        <input [(ngModel)]="commonName" placeholder="Enter common name(s)" />
+        <button (click)="searchPlants()">Search</button>
+      
+    <div *ngIf="plant.length > 0">
+        <h3>Search Results:</h3>
+        <ul>
+          <li *ngFor="let plant of plant">
+            <p>
+                {{plant.id}}
+            </p>
+            <a [routerLink]="['/addplant', plant.id]">add this plant</a>
+            <h2>{{ plant.common_name }}</h2>
+            
+            </li>
+            
+        </ul>
+      </div>
+      </div>
+      
+       
+        <button (click)="navigateToGarden()">Back to Garden</button>
+        
+       

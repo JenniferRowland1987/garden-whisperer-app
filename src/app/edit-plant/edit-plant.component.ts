@@ -8,7 +8,9 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './edit-plant.component.html',
   styleUrls: ['./edit-plant.component.css']
 })
+
 export class EditPlantComponent implements OnInit {
+  isEditing: boolean = false;
   id: number = 0;
   plant: any = {};
   editPlant: any ={
@@ -42,16 +44,19 @@ export class EditPlantComponent implements OnInit {
     });
   }
   updatePlant() {
+    if (this.isEditing) {
     this.gardenService.updatePlant(this.id, this.plant).subscribe(() => {
       console.log('Plant updated successfully!');
       this.router.navigate(['/plant-details', this.id]);
     });
+  } else {};
   }
   onSubmit(): void {
     this.gardenService.updatePlant(this.id, this.plant).subscribe(() => {
       console.log('Plant updated successfully!');
       this.router.navigate(['/plant-details', this.id]);
     });
+  
   }
 
   navigateToGarden(){

@@ -47,10 +47,9 @@ export class GardenPageComponent implements OnInit{
   });
 }
 
-navigateToAdd(){
-  this.router.navigate(['/addplant']);
+navigateToPlantSearch(){
+  this.router.navigate(['search-plant'])
 }
-
 
 //haven't used the below methods in this component yet, consider removing if we don't need them.
 getPlants(){
