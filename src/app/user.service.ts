@@ -36,4 +36,9 @@ export class UserService {
   {
     return this.http.post<any>(this.apiUrl, user);
   }
+
+  checkUserNameIsTaken(userName: string): Observable<boolean>{
+    const url =`${this.apiUrl}/IsUserNameAvailable/${userName}`;
+    return this.http.get<boolean>(url);
+  }
 }
