@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WeatherComponent } from './weather/weather.component';
@@ -14,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { SearchPlantComponent } from './search-plant/search-plant.component';
 import { PestDetailsComponent } from './pest-details/pest-details.component';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -34,7 +36,8 @@ import { PestDetailsComponent } from './pest-details/pest-details.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

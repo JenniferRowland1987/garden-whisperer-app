@@ -1,18 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { GardenService } from '../garden.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PlantService } from '../plant.service';
 import { UserService } from '../user.service';
+import { Plant } from '../models/plant.model';
 
 @Component({
   selector: 'app-add-plant',
   templateUrl: './add-plant.component.html',
   styleUrls: ['./add-plant.component.css']
 })
-export class AddPlantComponent {
+export class AddPlantComponent implements OnInit {
   id: number = 0;
-  plant: any = {};
+  perenualId: number = 0;
+  plant: any;
   newPlant: any ={
+    commonName: '',
     nickname: '',
     dateplanted: '',
     notes: '',
@@ -32,19 +35,33 @@ export class AddPlantComponent {
         this.newPlant = {}; 
       });
     }
-
-    addPlant(){
-      this.gardenService.addPlant(this.plant).subscribe(() => {
-        console.log('Plant added successfully!');
-        this.router.navigate(['/plant-details']);
+    ngOnInit() {
+      this.route.paramMap.subscribe((params) => {
+        const paramName = params.get('id');
+        if (paramName !== null) {
+          this.perenualId = +paramName;
+          console.log(this.perenualId)
+          this.plant(this.getPlantById); 
+        }
       });
-    }
-    //adding a plant from button in garden page will take you to search plant that will use the perenual api, then once you choose the
-    //plant it will take you to the add plant form, which will take you to the plant details for that new plant
-    navigateToGarden(){
-      this.router.navigate(['/garden', this.user.getUserID()]);
-    }
+  }
 
+  getPlantById(){
+    
+
+  }
+
+
+  addPlant(){
+    this.gardenService.addPlant(this.plant).subscribe(() => {
+      console.log('Plant added successfully!');
+      this.router.navigate(['/plant-details']);
+    });
+  }
+
+  navigateToGarden(){
+    this.router.navigate(['/garden', this.user.getUserID()]);
+  }
 }
 
 
