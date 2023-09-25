@@ -80,5 +80,14 @@ namespace gardenwhispererAPI.Controllers
         _dbContext.Plants.Remove(plant);
       }
     }
+
+    [HttpGet("IsUserNameAvailable/{userName}")]
+    public async Task<ActionResult<bool>> IsUserNameAvaialbe(string userName)
+    {
+      bool userExists = await _dbContext.UserInfos
+        .AnyAsync(user => user.UserName.ToLower() == userName.ToLower());
+
+      return !userExists;
+    }
   }
 }
