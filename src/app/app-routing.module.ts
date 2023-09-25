@@ -9,12 +9,13 @@ import { PlantDrComponent } from './plant-dr/plant-dr.component';
 import { WeatherComponent } from './weather/weather.component';
 import { PestDetailsComponent } from './pest-details/pest-details.component';
 import { SearchPlantComponent } from './search-plant/search-plant.component';
+import { CreateUserComponent } from './create-user/create-user.component';
 
 
 const routes: Routes = [
 
   {path: '', redirectTo: 'login', pathMatch: 'full'},
-  {path: 'addplant', component: AddPlantComponent},
+  {path: 'addplant/:id', component: AddPlantComponent},
   {path: 'edit-plant/:id', component: EditPlantComponent},
   {path: 'garden/:userId', component: GardenPageComponent}, //updated routing to take a userid parameter
   {path: 'login', component: LoginComponent},
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path: 'weather', component: WeatherComponent},
   {path: 'pest-details/:pestId', component: PestDetailsComponent},
   {path: 'search-plant', component: SearchPlantComponent},
+  {path: 'create-account', component: CreateUserComponent}
 
 ];
 

@@ -1,0 +1,19 @@
+<form (ngSubmit)="onSubmit()" #userForm="ngForm">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" [(ngModel)]="user.name" required>
+    </div>
+    <div class="form-group">
+      <label for="userName">Username</label>
+      <input type="text" id="userName" name="userName" [(ngModel)]="user.userName" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" [(ngModel)]="user.password" required>
+    </div>
+    <div class="form-group">
+      <label for="city">City</label>
+      <input type="text" id="city" name="city" [(ngModel)]="user.city">
+    </div>
+    <button type="submit" class="btn btn-primary">Create User</button>
+  </form>
