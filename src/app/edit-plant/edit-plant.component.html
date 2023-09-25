@@ -6,18 +6,15 @@
     <form (ngSubmit)="onSubmit()">
         <div class="">
             <h2></h2>
-            //api info for names, sun
-            <textarea id="nickname" [(ngModel)]="editPlant.nickname" name="nickname"></textarea>
-            <label for="dateplanted">Date Planted:</label>
-            <textarea id="commonname" [(ngModel)]="editPlant.commonname" name="commonname"></textarea>
+            <label for="notes">Nickname:</label>
+            <textarea id="nickname" [(ngModel)]="editPlant.nickName" name="nickname"></textarea>
             <label for="notes">Notes:</label>
             <textarea id="notes" [(ngModel)]="editPlant.notes" name="notes"></textarea>
             <label for="lastwater">Last Water:</label>
-            <textarea id="lastwater" [(ngModel)]="editPlant.lastwater" name="lastwater"></textarea>
-            <label for="lastfertilizer">Last Fertlization:</label>
-            <textarea id="lastfertilizer" [(ngModel)]="editPlant.lastfertilizer" name="lastfertilizer"></textarea>
-            // button that goes straight to plant dr, based on this plant if there is a problem
-            <button type="submit">Finished</button>
+            <textarea id="lastwater" [(ngModel)]="editPlant.lastWater" name="lastwater"></textarea>
+            <label for="lastfertilization">Last Fertlization:</label>
+            <textarea id="lastfertilization" [(ngModel)]="editPlant.lastFertilization" name="lastfertilization"></textarea>
+            <button type="submit" class="btn btn-primary">Save</button>
         </div>
         
     </form>

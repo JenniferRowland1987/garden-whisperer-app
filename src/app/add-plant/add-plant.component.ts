@@ -77,6 +77,7 @@ export class AddPlantComponent implements OnInit {
       const firstSunlight = this.plant.sunlight[0];
 
       const mergedData: GardenPlant = {
+        
         userId: this.user.getUserID(), 
         scienificName: firstScientificName,
         commonName: this.plant.common_name, 
