@@ -9,11 +9,13 @@
         <h3>Search Results:</h3>
         <ul>
           <li *ngFor="let plant of plant">
-            <p>
-                {{plant.id}}
-            </p>
-            <a [routerLink]="['/addplant', plant.id]">add this plant</a>
             <h2>{{ plant.common_name }}</h2>
+         
+            <div *ngIf="plant.default_image && plant.default_image.length > 0">
+              <img [src]="plant.default_image[0].regular_url" alt="{{ plant.common_name }} Image" />
+            </div>
+            <a [routerLink]="['/addplant', plant.id]">add this plant</a>
+            
             
             </li>
             

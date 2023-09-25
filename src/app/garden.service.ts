@@ -31,7 +31,8 @@ private apiUrl = 'https://localhost:7200/api/Plant';  //fixed the apiUrl and set
   }
 
   addPlant(plant: any): Observable<any> {
-    return this.http.post<any>(this.apiUrl, plant);
+    const url = `${this.apiUrl}/addplant`; 
+    return this.http.post<any>(url, plant);
   }
 
   updatePlant(id: number, plant: any): Observable<any> {
@@ -41,7 +42,8 @@ private apiUrl = 'https://localhost:7200/api/Plant';  //fixed the apiUrl and set
   }
 
 
-  
+  /* these aren't calls that exist on our api.
+
   labelNotHealthy(notHealthy: any): Observable<any> {
     return this.http.post<any>(this.apiUrl, notHealthy);
   }
@@ -56,6 +58,6 @@ private apiUrl = 'https://localhost:7200/api/Plant';  //fixed the apiUrl and set
     return this.http.get<any[]>('https://localhost:7200/getnothelthy');
   }
 
-
+*/
 
 }
