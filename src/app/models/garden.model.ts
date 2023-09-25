@@ -1,4 +1,5 @@
 export interface GardenPlant {
+    id?: number,
     userId: number;
     scienificName: string;
     commonName: string;
