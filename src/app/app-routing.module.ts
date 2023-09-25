@@ -14,7 +14,7 @@ import { SearchPlantComponent } from './search-plant/search-plant.component';
 const routes: Routes = [
 
   {path: '', redirectTo: 'login', pathMatch: 'full'},
-  {path: 'addplant', component: AddPlantComponent},
+  {path: 'addplant/:id', component: AddPlantComponent},
   {path: 'edit-plant/:id', component: EditPlantComponent},
   {path: 'garden/:userId', component: GardenPageComponent}, //updated routing to take a userid parameter
   {path: 'login', component: LoginComponent},

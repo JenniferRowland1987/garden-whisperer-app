@@ -1,9 +1,27 @@
-<div class="center">
-    <h1>Search for a Plant</h1>
 
 
-   
-</div>
-<div>
-    <button (click)="navigateToAddPlant()">Add Your Plant!</button>
-</div>
+      <div>
+        <h1>Plant Search</h1>
+        <input [(ngModel)]="commonName" placeholder="Enter common name(s)" />
+        <button (click)="searchPlants()">Search</button>
+      
+    <div *ngIf="plant.length > 0">
+        <h3>Search Results:</h3>
+        <ul>
+          <li *ngFor="let plant of plant">
+            <p>
+                {{plant.id}}
+            </p>
+            <a [routerLink]="['/addplant', plant.id]">add this plant</a>
+            <h2>{{ plant.common_name }}</h2>
+            
+            </li>
+            
+        </ul>
+      </div>
+      </div>
+      
+       
+        <button (click)="navigateToGarden()">Back to Garden</button>
+        
+       
