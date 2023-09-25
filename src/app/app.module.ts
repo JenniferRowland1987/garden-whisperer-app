@@ -15,7 +15,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { SearchPlantComponent } from './search-plant/search-plant.component';
 import { PestDetailsComponent } from './pest-details/pest-details.component';
+import { CreateUserComponent } from './create-user/create-user.component';
 import { CommonModule } from '@angular/common';
+
 
 
 @NgModule({
@@ -30,7 +32,8 @@ import { CommonModule } from '@angular/common';
     PlantDrComponent,
     PestDetailsComponent,
     PlantDetailsComponent,
-    SearchPlantComponent
+    SearchPlantComponent,
+    CreateUserComponent
   ],
   imports: [
     BrowserModule,
