@@ -1,4 +1,50 @@
+<div>
+    <h1>Add a Plant to Your Garden</h1>
+  
+   
+    <h2>Plant Details</h2>
+    <p><strong>Common Name:</strong> {{ plant.common_name }}</p>
+    <p><strong>Scientific Name:</strong> {{ plant.scientific_name }}</p>
+    <p><strong>Cycle:</strong> {{ plant.cycle }}</p>
+    <p><strong>Watering:</strong> {{ plant.watering }}</p>
+    <p><strong>Sunlight:</strong> {{ plant.sunlight.join(', ') }}</p>
+    
+    <h2>Add Plant to Garden</h2>
+    <form (ngSubmit)="onSubmit()" #plantForm="ngForm">
+      <div class="form-group">
+        <label for="nickName">Nickname</label>
+        <input type="text" id="nickName" name="nickName" [(ngModel)]="newPlant.nickName" required>
+      </div>
+      <div class="form-group">
+        <label for="datePlanted">Date Planted</label>
+        <input type="date" id="datePlanted" name="datePlanted" [(ngModel)]="newPlant.datePlanted" required>
+      </div>
+      <div class="form-group">
+        <label for="notes">Notes</label>
+        <textarea id="notes" name="notes" [(ngModel)]="newPlant.notes"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="lastWater">Last Watering Date</label>
+        <input type="date" id="lastWater" name="lastWater" [(ngModel)]="newPlant.lastWater">
+      </div>
+      <div class="form-group">
+        <label for="lastFertilization">Last Fertilization Date</label>
+        <input type="date" id="lastFertilization" name="lastFertilization" [(ngModel)]="newPlant.lastFertilization">
+      </div>
+      <div class="form-group">
+        <label for="isHealthy">Is Healthy</label>
+        <input type="checkbox" id="isHealthy" name="isHealthy" [(ngModel)]="newPlant.isHealthy">
+      </div>
+      
+      <input type="hidden" name="plantId" [(ngModel)]="plant.id">
+     
+  
+      <button type="submit" class="btn btn-primary">Add Plant to Garden</button>
+    </form>
 
+
+
+<!--
 <div class="container">
   <h2>Add a New Plant</h2>
   <form (ngSubmit)="onSubmit()">
@@ -30,3 +76,4 @@
   </form>
   <button (click)="navigateToGarden()">back to garden!</button>
 </div>
+-->
