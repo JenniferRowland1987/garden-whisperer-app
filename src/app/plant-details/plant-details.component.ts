@@ -4,6 +4,7 @@ import { GardenService } from '../garden.service';
 import { PlantDrService } from '../plant-dr.service';
 
 import { ActivatedRoute, Router } from '@angular/router';
+import { UserService } from '../user.service';
 
 
 
@@ -22,7 +23,8 @@ export class PlantDetailsComponent {
     private plantService: PlantService,
     private plantDrService: PlantDrService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private user: UserService
 
  
 
@@ -60,6 +62,18 @@ export class PlantDetailsComponent {
             });
           }
       });
+  }
+
+  deletePlant(plantId: number) {
+    this.gardenService.deletePlant(plantId).subscribe(
+      () => {
+        console.log('Plant deleted successfully.');     
+        this.router.navigate(['/garden', this.user.getUserID()])
+      },
+      (error) => {
+        console.error('Error deleting plant:', error);        
+      }
+    );
   }
 
   navigateToGarden(){

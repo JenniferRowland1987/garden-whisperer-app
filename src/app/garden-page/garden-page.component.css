@@ -66,3 +66,14 @@
     font-family: cursive;
     margin-bottom: 45px;
   }
+
+  .weather {
+    position: center;
+  }
+
+  .searchplant {
+    position: center;
+    justify-content: center;
+    margin: 20px;
+    padding: 50px;
+  }
