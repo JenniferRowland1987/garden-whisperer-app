@@ -41,6 +41,12 @@ private apiUrl = 'https://localhost:7200/api/Plant';  //fixed the apiUrl and set
     return this.http.put<any>(url, plant);
   }
 
+  deletePlant(plantId: number): Observable<any> {
+    const url = `${this.apiUrl}/${plantId}`;
+    return this.http.delete<any>(url);
+  }
+}
+
 
   /* these aren't calls that exist on our api.
 
@@ -60,4 +66,4 @@ private apiUrl = 'https://localhost:7200/api/Plant';  //fixed the apiUrl and set
 
 */
 
-}
+
