@@ -27,7 +27,8 @@ constructor(
 
 ngOnInit(): void {
   console.log(this.userService.userID);
- this.getCity();  
+ this.getCity(); 
+ this.getWeather(); 
 } 
 
 getCity(){
@@ -51,7 +52,7 @@ checkPlants() {
 if (this.temp <= 40)
 {this.message='Cover your outdoor plants, it is getting cold!'}
 
-if (this.temp >=80)
+else if (this.temp >=80)
   {this.message='Consider watering your outdoor plants...it is getting hot!'}
 
 else{
