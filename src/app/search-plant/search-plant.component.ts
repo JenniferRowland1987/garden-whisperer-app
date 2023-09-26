@@ -40,7 +40,6 @@ export class SearchPlantComponent implements OnInit {
       },
       (error) => {
         console.error('API Error:', error);
-        // Handle the error here.
       }
     );
       
