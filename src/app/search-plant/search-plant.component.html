@@ -11,9 +11,16 @@
           <li *ngFor="let plant of plant">
             <h2>{{ plant.common_name }}</h2>
          
-            <div *ngIf="plant.default_image && plant.default_image.length > 0">
-              <img [src]="plant.default_image[0].regular_url" alt="{{ plant.common_name }} Image" />
+          <div *ngIf="plant.default_image != null">
+            
+           <div *ngIf="plant.default_image != undefined">
+          
+            
+
+            <img src="{{plant.default_image.original_url}}">
+              
             </div>
+          </div>
             <a [routerLink]="['/addplant', plant.id]">add this plant</a>
             
             
