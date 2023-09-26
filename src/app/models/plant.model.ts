@@ -8,6 +8,18 @@ export interface PlantApiResponse {
     total: number;
   }
 
+  export interface DefaultImage{
+    license: number;
+    license_name: string;
+    license_url: string;
+    original_url: string;
+    regular_url: string;
+    medium_url: string;
+    small_url: string;
+    thumbnail: string;
+  }
+
+
 export interface Plant {
     id: number;
     common_name: string;
@@ -17,14 +29,5 @@ export interface Plant {
     watering: string,
     sunlight: string[];
 
-    default_image: {
-      license: number;
-      license_name: string;
-      license_url: string;
-      original_url: string;
-      regular_url: string;
-      medium_url: string;
-      small_url: string;
-      thumbnail: string;
-    }[];
+    default_image: DefaultImage;
   }

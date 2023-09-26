@@ -6,6 +6,7 @@ import { UserService } from '../user.service';
 import { Plant } from '../models/plant.model';
 import { GardenPlant } from '../models/garden.model';
 import { first } from 'rxjs';
+import { DefaultImage } from '../models/plant.model';
 
 @Component({
   selector: 'app-add-plant',
@@ -23,7 +24,16 @@ export class AddPlantComponent implements OnInit {
     cycle: '',
     watering: '',
     sunlight: [],
-    default_image: []
+    default_image: {
+      license: 0,
+      license_name: '',
+      license_url: '',
+      original_url: '',
+      regular_url: '',
+      medium_url: '',
+      small_url: '',
+       thumbnail: ''
+    }
   };
   newPlant: GardenPlant = {
     userId: 0,
