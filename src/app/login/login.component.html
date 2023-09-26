@@ -13,6 +13,7 @@
                 <input type="password" id="password" [(ngModel)]="password" name="password" required>
             </div>
             <button type="submit">Login</button>
+            <p><a href="/create-account">Create an account</a></p>
         </form>
         <div *ngIf="loginFail">
             <p>Don't have an account? <a href="/create-account">Create an account</a></p>
