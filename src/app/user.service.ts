@@ -41,4 +41,13 @@ export class UserService {
     const url =`${this.apiUrl}/IsUserNameAvailable/${userName}`;
     return this.http.get<boolean>(url);
   }
+
+  updateUser(id: number): Observable<any>
+  {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.post<any>(this.apiUrl, id);
+  }
+
+
+
 }
