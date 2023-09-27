@@ -1,1 +1,12 @@
-<p>user-details works!</p>
+<div class="user-details">
+    <h2>User Details</h2>
+  
+    <p><strong>Name:</strong> {{ user.name }}</p>
+    <p><strong>Username:</strong> {{ user.userName }}</p>
+    <p><strong>City:</strong> {{ user.city }}</p>
+  
+  
+  
+    <button (click)="navigateToGarden()">Go Back to Your Garden</button>
+    <button (click)="navigateToUpdateUser()">Update Profile</button>
+  </div>
