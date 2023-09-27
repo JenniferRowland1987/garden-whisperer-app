@@ -59,6 +59,16 @@
     z-index: 3;
   }
   
+  .welcomebanner {
+    background-image: url('/assets/transparentscroll.png');
+    background-size: 300px;
+    text-align: center;
+    padding: 30px;
+    color: rgb(1, 42, 31);
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 3;
+  }
  
   .nickname {
     font-size: 20px; /* Adjust the font size */
@@ -68,6 +78,7 @@
   }
 
   .weather {
+    text-align: center;
     position: center;
   }
 

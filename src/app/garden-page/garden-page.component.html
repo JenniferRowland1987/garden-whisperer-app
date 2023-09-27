@@ -2,6 +2,29 @@
   <app-weather></app-weather> 
 </div>
 
+<div>
+    <style>
+        .welcomebanner {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            text-align: center;
+            color: #059b14; 
+            padding: 46px;
+            height: 12vh; 
+        }
+        .welcomebanner h1 {
+            font-size: 100x; 
+        }
+    </style>
+
+<body>
+    <div class="welcomebanner">
+        <h1>Welcome to your Garden!</h1>
+    </div>
+</body>
+</div>
+
 <div class="garden">
   <div *ngFor="let plant of plants" class="plant-item">
     <div class="frame-container"> 
@@ -14,7 +37,6 @@
     </div>
     <div class="banner">
       <h2 class="nickname">{{ plant.nickName }}</h2>
-   
     </div>
   </div>
 </div>  
