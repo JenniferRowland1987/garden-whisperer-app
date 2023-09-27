@@ -10,6 +10,8 @@ import { WeatherComponent } from './weather/weather.component';
 import { PestDetailsComponent } from './pest-details/pest-details.component';
 import { SearchPlantComponent } from './search-plant/search-plant.component';
 import { CreateUserComponent } from './create-user/create-user.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
+import { UpdateUserComponent } from './update-user/update-user.component';
 
 
 const routes: Routes = [
@@ -24,7 +26,9 @@ const routes: Routes = [
   {path: 'weather', component: WeatherComponent},
   {path: 'pest-details/:pestId', component: PestDetailsComponent},
   {path: 'search-plant', component: SearchPlantComponent},
-  {path: 'create-account', component: CreateUserComponent}
+  {path: 'create-account', component: CreateUserComponent},
+  {path: 'user-details', component: UserDetailsComponent},
+  {path: 'update-user', component: UpdateUserComponent}
 
 ];
 
