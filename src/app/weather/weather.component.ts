@@ -56,7 +56,7 @@ else if (this.temp >=80)
   {this.message='Consider watering your outdoor plants...it is getting hot!'}
 
 else{
-  this.message='nice weather today! not too hot, not too cold!'}
+  this.message='Nice weather today! Not too hot, not too cold!'}
 }
 
 }
