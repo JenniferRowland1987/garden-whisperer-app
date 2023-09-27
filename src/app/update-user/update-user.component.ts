@@ -2,9 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserInfo } from '../models/user.model';
-import { EditPlantComponent } from '../edit-plant/edit-plant.component';
-import { GardenPageComponent } from '../garden-page/garden-page.component';
-import { GardenService } from '../garden.service';
+
 
 @Component({
   selector: 'app-update-user',
@@ -27,7 +25,7 @@ export class UpdateUserComponent implements OnInit{
         this.id = +paramName;
         console.log(this.id)
 
-        this.updateUser(this.id);       
+        this.id;       
       }
     });
   }
@@ -54,7 +52,7 @@ export class UpdateUserComponent implements OnInit{
       console.log(this.id)
       console.log('User updated successfully!', response);     
       
-      this.router.navigate(['/garden', this.user.id()])
+      this.router.navigate(['/garden', this.userService.getUserID()])
       }
     );
   }

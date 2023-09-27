@@ -18,6 +18,7 @@ import { PestDetailsComponent } from './pest-details/pest-details.component';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { CommonModule } from '@angular/common';
 import { UpdateUserComponent } from './update-user/update-user.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
 
 
 
@@ -35,7 +36,8 @@ import { UpdateUserComponent } from './update-user/update-user.component';
     PlantDetailsComponent,
     SearchPlantComponent,
     CreateUserComponent,
-    UpdateUserComponent
+    UpdateUserComponent,
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule,
