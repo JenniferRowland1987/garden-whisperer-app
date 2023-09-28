@@ -1,26 +1,26 @@
 
 
-<div class="plant-details">
-  <h2>Plant Details</h2>
+<div class="center-content">
+  <h2>About {{plant.nickName}}</h2>
 
   <div *ngIf="plant">
-    <!-- Display plant details -->
+
+    <div *ngIf="plant.imageUrl">
+      <img src="{{ plant.imageUrl }}" alt="Plant Image" class="circular-image">
+    </div>
+  <div class="boxed-details">
     <p><strong>Common Name:</strong> {{ plant.commonName }}</p>
-    <p>Water Requirements: {{plant.watering}}</p>
-    <p><strong>Scientific Name:</strong> {{ plant.scienificName }}</p>
-    <p><strong>Sunlight:</strong> {{ plant.sun }}</p>
     <p><strong>Nickname:</strong> {{ plant.nickName }}</p>
+    <p><strong>Water Requirements:</strong> {{plant.watering}}</p>
+    <p><strong>Scientific Name:</strong> {{ plant.scienificName }}</p>
+    <p><strong>Sunlight:</strong> {{ plant.sun }}</p>    
     <p><strong>Date Planted:</strong> {{ plant.datePlanted }}</p>
     <p><strong>Last Fertlization:</strong> {{ plant.lastFertilization }}</p>
     <p><strong>Last Water:</strong> {{ plant.lastWater }}</p>
     <p><strong>Notes:</strong> {{ plant.notes }}</p>
 
-    <!-- Add other plant details here based on your data structure -->
+  </div>
     
-    <!-- Display plant image if available -->
-    <div *ngIf="plant.imageUrl">
-      <img src="{{ plant.imageUrl }}" alt="Plant Image">
-    </div>
   </div>
 
   <!-- Handle the case when plant details are not available -->
@@ -29,7 +29,10 @@
   </div>
 
 </div>
-<button (click)="navigateToGarden()">Back to Garden</button>
-<button (click)="navigateToEdit()">Update Plant</button>
-<button (click)="navigateToDoctor()">EMERGENCY DOCTOR!!!</button>
-<button (click)="deletePlant(plant.id)">delete this plant D:< </button>
+
+<div class="button-container">
+<button (click)="navigateToGarden()" class="button">Back to Garden</button>
+<button (click)="navigateToEdit()"class="button">Update Plant</button>
+<button (click)="navigateToDoctor()"class="button">EMERGENCY DOCTOR!!!</button>
+<button (click)="deletePlant(plant.id)"class="button">delete this plant D:< </button>
+</div>
