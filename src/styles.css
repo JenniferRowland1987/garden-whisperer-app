@@ -3,7 +3,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh; /* Center within the viewport */
+    
+    background-repeat: fixed;
   }
   
   
@@ -14,6 +15,7 @@
     background-image: url('src\assets\indieground-vintagepaper-textures-05.jpg');
     background-size: cover;
     border-radius: 10px;
+    font-family: Georgia, serif;
     margin: 10px;
   }
 
