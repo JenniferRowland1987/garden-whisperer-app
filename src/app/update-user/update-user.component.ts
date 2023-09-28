@@ -11,25 +11,6 @@ import { UserInfo } from '../models/user.model';
 })
 export class UpdateUserComponent implements OnInit{
 
-  id: number = 0;
-
-  constructor(private userService: UserService, 
-    private router: Router,
-    private route: ActivatedRoute,
-    ){}
-
-  ngOnInit() {
-    this.route.paramMap.subscribe((params) => {
-      const paramName = params.get('id');
-      if (paramName !== null) {
-        this.id = +paramName;
-        console.log(this.id)
-
-        this.id;       
-      }
-    });
-  }
-
   user: UserInfo = {
     id: 0,
     name: '',
@@ -46,16 +27,57 @@ export class UpdateUserComponent implements OnInit{
     city: '',
   };
 
+  constructor(
+    private userService: UserService, 
+    private router: Router,
+    private route: ActivatedRoute,
+   
+    ){}
 
-  onSubmit() {
-    this.userService.updateUser(this.id).subscribe((response) => {
-      console.log(this.id)
-      console.log('User updated successfully!', response);     
-      
-      this.router.navigate(['/garden', this.userService.getUserID()])
+  ngOnInit() {
+    this.setUser();         
+  }
+
+  setUser(){
+    this.userService.getUser(this.userService.getUserID()).subscribe(
+      (data) => {
+        this.user = data;
+        console.log(this.user)
+
+        this.updateUser = {...this.user};
+      },
+      (error) => {
+        console.error('error getting user profile', error);
       }
     );
   }
+
+  updateTheUser(){
+    this.userService.updateUser(this.user.id, this.updateUser).subscribe(
+      (data)=> {
+        console.log('user updated successfully', data)
+        this.router.navigate(['/user-details']);
+      },
+      (error)=>{
+        console.error('error updating the user dude', error)
+      }
+    );
+  }
+
+  onSubmit(){
+    if(!this.updateUser.name || !this.updateUser.userName || !this.updateUser.password || !this.updateUser.city){
+      this.updateUser = {...this.user};
+    }else{
+      this.updateTheUser();
+    }
+    
+  }
+  
+
+
+
+
+
 
 
 
