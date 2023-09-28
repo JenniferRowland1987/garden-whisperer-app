@@ -8,7 +8,7 @@ import { UserInfo } from './models/user.model';
 })
 export class UserService {
 
-  private apiUrl = "https://localhost:7200/api/UserInfo"
+  private apiUrl = "https://localhost:7200/api/UserInfo" 
 
   public userID = 2;
 
