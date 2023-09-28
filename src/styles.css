@@ -1,1 +1,59 @@
-/* You can add global styles to this file, and also import other style files */
+.center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Center within the viewport */
+  }
+  
+  
+  .boxed-details {
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+    background-image: url('src\assets\indieground-vintagepaper-textures-05.jpg');
+    background-size: cover;
+    border-radius: 10px;
+    margin: 10px;
+  }
+
+
+.button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: rgb(118, 157, 92);
+    color: #fff;
+    border: darkgreen;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+  
+    &:hover{
+      background-color: rgb(138, 173, 114);
+    }
+  }
+  
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin-top: 20px;
+  }
+  
+  .danger{
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: rgb(118, 157, 92);
+    color: #fff;
+    border: darkgreen;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+  
+    &:hover{
+      background-color: rgb(227, 22, 22);
+    }
+  }
