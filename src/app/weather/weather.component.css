@@ -1,6 +1,9 @@
 .weather-container {
     width: 500px;
-    border: 15px solid goldenrod;
+    border: 10px solid goldenrod;
     padding: 15px;  
     margin: 10px;
+    font-family: Georgia, serif;
+    background-color: gold; 
+    text-align: center;
   }
