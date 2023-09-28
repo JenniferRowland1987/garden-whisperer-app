@@ -94,4 +94,17 @@
     padding: 50px;
   }
 
-  
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
+  }
+
+  .button {
+    font-size: 30px;
+    font-family: Georgia, serif;
+    background-color: gold; 
+    text-align: center;
+    border: 10px solid goldenrod;
+  }
