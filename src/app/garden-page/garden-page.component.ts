@@ -51,6 +51,10 @@ navigateToPlantSearch(){
   this.router.navigate(['search-plant'])
 }
 
+navigateToUserDetails(){
+  this.router.navigate(['/user-details'])
+}
+
 //haven't used the below methods in this component yet, consider removing if we don't need them.
 getPlants(){
   this.gardenService.getPlants(),subscribe((plants) => {

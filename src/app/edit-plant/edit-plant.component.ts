@@ -1,9 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { GardenService } from '../garden.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Plant } from '../models/plant.model';
 import { GardenPlant } from '../models/garden.model';
-import { PlantService } from '../plant.service';
 import { UserService } from '../user.service';
 
 @Component({
@@ -29,27 +27,15 @@ export class EditPlantComponent implements OnInit {
     isHealthy: true,    
     perenualId: 0
   };
-  editPlant: GardenPlant = {
-    id: 0,
-    userId: 0,
-    scienificName: '', 
-    commonName: '',
-    nickName: '',
-    datePlanted: new Date(),
-    notes: '',  
-    lastWater: new Date(),
-    sun: '',
-    lastFertilization: new Date(),
-    isHealthy: true,    
-    perenualId: 0
-};
+  editPlant: Partial<GardenPlant> = {};
+
 isEditing: any;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private gardenService: GardenService,
-    private plantService: PlantService,
+   
     private user: UserService
   ) {}
 
@@ -82,18 +68,19 @@ isEditing: any;
   onSubmit(): void {
     if (this.plant) {      
      
-      const mergedData: GardenPlant = {
+      
+     const mergedData: GardenPlant = {
         id: this.plant.id,
         userId: this.user.getUserID(), 
-        scienificName: this.plant.scienificName,
-        commonName: this.plant.commonName, 
-        nickName: this.editPlant.nickName,
-        datePlanted: this.plant.datePlanted,
-        notes: this.editPlant.notes,
-        sun: this.plant.sun,
-        lastWater: this.editPlant.lastWater,
-        lastFertilization: this.editPlant.lastFertilization,
-        isHealthy: this.editPlant.isHealthy,
+        scienificName: this.editPlant.scienificName || this.plant.scienificName,
+        commonName: this.editPlant.commonName || this.plant.commonName, 
+        nickName: this.editPlant.nickName || this.plant.nickName,
+        datePlanted: this.editPlant.datePlanted || this.plant.datePlanted,
+        notes: this.editPlant.notes || this.plant.notes,
+        sun: this.editPlant.sun || this.plant.sun,
+        lastWater: this.editPlant.lastWater || this.plant.lastWater,
+        lastFertilization: this.editPlant.lastFertilization || this.plant.lastFertilization,
+        isHealthy: this.editPlant.isHealthy || this.plant.isHealthy,
         perenualId: this.plant.perenualId
       };
 
