@@ -1,5 +1,6 @@
-<div class="update-user">
-    <h2>Update User Profile</h2>
+<div class="center-content">
+    <div class="boxed-details">
+    <h2>Update Your Profile:</h2>
     <form (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="name">Name</label>
@@ -18,7 +19,8 @@
         <input type="text" id="city" name="city" [(ngModel)]="updateUser.city" class="form-control" required>
       </div>
       <div class="form-group">
-        <button type="submit" class="btn btn-primary">Update User</button>
+        <button type="submit" class="btn btn-primary" class="button">Update</button>
       </div>
     </form>
   </div>
+</div>

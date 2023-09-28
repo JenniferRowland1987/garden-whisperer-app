@@ -1,3 +1,23 @@
+.center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Center within the viewport */
+  }
+  
+  
+  .boxed-details {
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+    background-image: url('src\assets\indieground-vintagepaper-textures-05.jpg');
+    background-size: cover;
+    border-radius: 10px;
+    margin: 10px;
+  }
+
+
 .button {
     margin-top: 10px;
     padding: 10px 20px;
@@ -16,6 +36,7 @@
   
   .button-container {
     display: flex;
+    flex-direction: column;
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
     margin-top: 20px;
