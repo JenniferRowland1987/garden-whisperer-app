@@ -66,6 +66,10 @@ navigateToUserDetails(){
   this.router.navigate(['/user-details'])
 }
 
+navigateToLogin(){
+  this.router.navigate(['/login'])
+}
+
 //haven't used the below methods in this component yet, consider removing if we don't need them.
 getPlants(){
   this.gardenService.getPlants(),subscribe((plants) => {
