@@ -1,19 +1,24 @@
-<div class="center">
-    <h1>Edit User Details</h1>
-    
+<div class="update-user">
+    <h2>Update User Profile</h2>
     <form (ngSubmit)="onSubmit()">
-        <div class="">
-            <h2></h2>
-            <label for="notes">Password:</label>
-            <textarea id="nickname" [(ngModel)]="user.password" name="password"></textarea>
-
-            <label for="notes">City:</label>
-            <textarea id="notes" [(ngModel)]="user.city" name="city"></textarea>
-            
-
-            <button type="submit" class="btn btn-primary">Save</button>
-        </div>
-        
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" [(ngModel)]="updateUser.name" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="userName">Username</label>
+        <input type="text" id="userName" name="userName" [(ngModel)]="updateUser.userName" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" [(ngModel)]="updateUser.password" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="city">City</label>
+        <input type="text" id="city" name="city" [(ngModel)]="updateUser.city" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Update User</button>
+      </div>
     </form>
-   
-</div>
+  </div>
