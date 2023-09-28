@@ -1,54 +1,64 @@
 
 <div class="grid-container">
   <div class="grid-child"> <app-weather></app-weather> </div>
-  <div class="grid-child"> <div class="searchplant">
-    <button class="button" (click)="navigateToPlantSearch()">Search for a plant here!</button>
+  <div class="grid-child"> <div class="logo">
+    <img [src]="'/assets/templogo.png'" width="500" height="300"> 
   </div> </div>
 </div>
 
-<div>
-    <style>
-        .welcomebanner {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            text-align: center;
-            color: #059b14; 
-            padding: 46px;
-            height: 12vh; 
-        }
-        .welcomebanner h1 {
-            font-size: 100x; 
-            font-family: cursive;
-        }
-    </style>
-    <div class="welcomebanner">
-        <h1>Welcome to your Garden!</h1>
-    </div>
-</div>
 
+   <div class="welcomebanner">
+    
+    <div class="welcome-text"><h1>{{user.name}}'s Garden!</h1></div>
+    <div class="button-container">
+    <button (click)="navigateToUserDetails()" class="button">update profile</button>   
+      <button (click)="navigateToLogin()" class="danger">log out</button>
+    </div>   
+    </div>
+
+<div class="boxed-garden">
 <div class="garden">
+  
   <div *ngFor="let plant of plants" class="plant-item">
-    <div class="frame-container"> 
+    <div class="frame-container">
       <a [routerLink]="['/plant-details', plant.id]">
       <div class="image-container">
         <img *ngIf="plant.imageUrl" [src]="plant.imageUrl" alt="Plant Image" class="plant-image">
         
       </div> </a>
-      <div class="frame-overlay"></div>
     </div>
+    
     <div class="banner">
       <h2 class="nickname">{{ plant.nickName }}</h2>
     </div>
   </div>
-</div>  
 
+  <div class="plant-item">
+    <div class="frame-container">
+      <a [routerLink]="['/search-plant']">
+        <div class="image-container">
+          <img [src]="'/assets/sprout.jpg'" alt="Plant Silhouette" class="plant-image">
+        </div>
+      </a>
+    </div>
+    <div class="banner">
+      <h2 class="nickname">Add New Plant!</h2>
+    </div>
+  </div>
 
-<div class="searchplant">
-  <button (click)="navigateToPlantSearch()">Search for A Plant!</button>
 </div>
-<button (click)="navigateToUserDetails()">update profile</button>
+</div>  
+<div class="bottom-content">
+  <img [src]="'/assets/transparentmushroom.png'" width="150" height="170" class="bottom-image-container"> 
+  <div class="text-container">
+    <p>Whoa, your garden looks so cute!</p>
+    <p>Thanks for gardening with me today!</p>
+  </div>
+  
+</div>
 
-<p><a href="/login">Logout</a></p>
+
+
+
 
 
