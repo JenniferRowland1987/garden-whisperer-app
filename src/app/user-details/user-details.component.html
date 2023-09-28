@@ -1,12 +1,26 @@
-<div class="user-details">
+<div class="center-content">
+    <div class="top-content">
+        <img [src]="'/assets/profilemushroom.png'" width="150" height="170" class="bottom-image-container"> 
+        <div class="text-container">
+          <p>Ok, this is everything I know about you, {{user.name}}!</p>
+          <p>Please click update profile to change anything, including your password!</p>
+        </div>
+        
+      </div>
+    <div class="boxed-details">
     <h2>User Details</h2>
   
     <p><strong>Name:</strong> {{ user.name }}</p>
     <p><strong>Username:</strong> {{ user.userName }}</p>
     <p><strong>City:</strong> {{ user.city }}</p>
+<div class="button-container">
+    <button (click)="navigateToUpdateUser()" class="button">Update Profile</button>
+    <button (click)="navigateToGarden()" class="button">Go Back to Your Garden</button>
+
+</div>
+
   
+</div>
   
-  
-    <button (click)="navigateToGarden()">Go Back to Your Garden</button>
-    <button (click)="navigateToUpdateUser()">Update Profile</button>
+   
   </div>
