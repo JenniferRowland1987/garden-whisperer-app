@@ -1,5 +1,8 @@
-<div class="weather">
-  <app-weather></app-weather> 
+<div class="grid-container">
+  <div class="grid-child"> <app-weather></app-weather> </div>
+  <div class="grid-child"> <div class="searchplant">
+    <button class="button" (click)="navigateToPlantSearch()">Search for a plant here!</button>
+  </div> </div>
 </div>
 
 <div class="garden">
@@ -19,8 +22,6 @@
   </div>
 </div>  
 
-<div class="searchplant">
-  <button (click)="navigateToPlantSearch()">Search for A Plant!</button>
-</div>
+
 
 <p><a href="/login">Logout</a></p>

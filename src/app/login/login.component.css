@@ -1,6 +1,7 @@
 .login-container{
     display: flex;
     height: 100vh;
+    font-family: Georgia, serif;
 }
 
 .mushroom-container{
@@ -16,4 +17,15 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
+    font-family: Georgia, serif;
+}
+
+.name-container {
+    flex: 3;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    font-size: 100px;
+    
+    font-family: Georgia, serif;
 }
