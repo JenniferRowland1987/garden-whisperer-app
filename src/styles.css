@@ -1,1 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
+.button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: rgb(118, 157, 92);
+    color: #fff;
+    border: darkgreen;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+  
+    &:hover{
+      background-color: rgb(138, 173, 114);
+    }
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin-top: 20px;
+  }
+  
+  .danger{
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: rgb(118, 157, 92);
+    color: #fff;
+    border: darkgreen;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+  
+    &:hover{
+      background-color: rgb(227, 22, 22);
+    }
+  }

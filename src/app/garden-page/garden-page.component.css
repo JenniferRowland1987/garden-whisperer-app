@@ -65,15 +65,35 @@
   }
   
   .welcomebanner {
-    background-image: url('/assets/transparentscroll.png');
-    background-size: 300px;
-    text-align: center;
-    padding: 30px;
-    color: rgb(1, 42, 31);
-    background-repeat: no-repeat;
+    background-image: url('/assets/transparentfence.png');
+    background-size: 312px;
+    text-align: center;   
+    background-repeat: repeat-x;
     background-position: center;
-    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;    
+    padding: 40px;
+    height: 12vh; 
+    z-index: 0;
+    width: 95%;
   }
+
+  .welcome-text{
+    background-image: url('/assets/cartoonwood.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    color: #402306; 
+    font-size: 100x; 
+    font-family: cursive;
+    z-index: 1;
+  }
+
+ 
+
  
   .nickname {
     font-size: 20px; /* Adjust the font size */
@@ -87,11 +107,14 @@
     position: center;
   }
 
-  .searchplant {
+  .logo {
     position: center;
     justify-content: center;
-    margin: 20px;
-    padding: 50px;
+    margin: 5px;
+    padding: 5px;
+    width: 250px;
+    height: 300px;
+    
   }
 
 
@@ -101,12 +124,41 @@
     grid-gap: 5px;
   }
 
-  .button {
-    font-size: 30px;
-    font-family: Georgia, serif;
-    background-color: gold; 
+  
+
+  .boxed-garden {
+    border: 1px solid #ccc;
+    padding: 20px;
+    padding-top: 60px;
     text-align: center;
-    border: 10px solid goldenrod;
+    background-image: url('src\assets\soil.png');
+    background-repeat: repeat;
+    border-radius: 10px;
+    margin: 10px;
   }
 
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .bottom-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Adjust margin as needed */
+  }
+  .bottom-image-container {
+    margin-right: 20px; /* Adjust margin as needed to create space between image and text */
+  }
+  .text-container {
+    background-color: #f0f0f0; 
+    padding: 10px;
+    border-radius: 10px;
+    font-family: cursive;
+    color: green;
+    text-align: center;
+  }
 
