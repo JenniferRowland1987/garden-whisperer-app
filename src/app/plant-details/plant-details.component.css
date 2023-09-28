@@ -11,7 +11,8 @@
   border: 1px solid #ccc;
   padding: 20px;
   text-align: center;
-  background-image: url('src\assets\Lined-Paper.jpg');
+  background-image: url('src\assets\indieground-vintagepaper-textures-05.jpg');
+  background-size: cover;
   border-radius: 10px;
   margin: 10px;
 }
@@ -29,7 +30,7 @@
 .button {
   margin-top: 10px;
   padding: 10px 20px;
-  background-color: seagreen;
+  background-color: rgb(118, 157, 92);
   color: #fff;
   border: darkgreen;
   border-radius: 5px;
@@ -38,7 +39,7 @@
   font-weight: bold;
 
   &:hover{
-    background-color: lightgreen;
+    background-color: rgb(138, 173, 114);
   }
 }
 
@@ -47,4 +48,20 @@
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
   margin-top: 20px;
+}
+
+.danger{
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: rgb(118, 157, 92);
+  color: #fff;
+  border: darkgreen;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+
+  &:hover{
+    background-color: rgb(227, 22, 22);
+  }
 }
