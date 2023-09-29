@@ -8,8 +8,52 @@ body {
   padding: 0;
 }
 
-.pest-image{
+.pest-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+}
+
+
+.pest-card {
+ 
+  text-align: center;
+  background-image: url('src\assets\indieground-vintagepaper-textures-05.jpg');
+  background-size: cover;
+  padding: 10px;
+  border-radius: 10px;
+  font-family: cursive;
+  color: green;
+  margin: 30px;
+  margin-left: 250px; 
+  width: 65%;
+}
+
+.pest-image {
   width: 200px;
-    height: 200px;
-    border-radius: 50%;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;   
+}
+
+.text-container {
+  background-color: #f0f0f0; 
+  padding: 10px;
+  border-radius: 10px;
+  font-family: cursive;
+  color: green;
+  text-align: center;
+}
+.bottom-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px; /* Adjust margin as needed */
 }
