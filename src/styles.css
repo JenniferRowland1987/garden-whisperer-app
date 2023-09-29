@@ -7,15 +7,13 @@
     background-repeat: fixed;
   }
   
-  
   .boxed-details {
     border: 1px solid #ccc;
     padding: 20px;
     text-align: center;
-    background-image: url('src\assets\indieground-vintagepaper-textures-05.jpg');
-    background-size: cover;
-    border-radius: 10px;
-    font-family: Georgia, serif;
+    background-color: rgb(118, 157, 92); /* Green background color */
+    color: #fff; /* White text color */
+    border-radius: 5px; /* Rounded corners */
     margin: 10px;
   }
 
