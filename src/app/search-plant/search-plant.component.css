@@ -1,9 +1,36 @@
 body {
     background-image: url('src\assets\cottagecoreinspo.jpg'); 
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-attachment: fixed;
     background-position: center;
     margin: 0;
     padding: 0;
   }
+
+  .form-group {
+    margin-bottom: 20px; /* Add margin between form groups */
+    font-family: Georgia, serif;
+}
+
+label {
+  display: inline-block;
+  font-family: Georgia, serif;
+  width: 120px; /* Set a width for the labels */
+  font-weight: bold;
+}
+
+input.form-control {
+  width: 90%; /* Use the remaining width for the inputs */
+  padding: 10px;
+  font-family: Georgia, serif;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5px;
+}

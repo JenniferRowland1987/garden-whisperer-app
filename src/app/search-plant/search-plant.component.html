@@ -1,36 +1,42 @@
 
 
-      <div>
+      <div class="center-content">
+        <div class="boxed-details">
         <h1>Plant Search</h1>
         <input [(ngModel)]="commonName" placeholder="Enter common name(s)" />
         <button (click)="searchPlants()">Search</button>
       
+
     <div *ngIf="plant.length > 0">
         <h3>Search Results:</h3>
         <ul>
+          
           <li *ngFor="let plant of plant">
+            
+            <p></p>
             <h2>{{ plant.common_name }}</h2>
-         
+            <a [routerLink]="['/addplant', plant.id]">add this plant</a>
+            
           <div *ngIf="plant.default_image != null">
             
            <div *ngIf="plant.default_image != undefined">
-          
-            
-
-            <img src="{{plant.default_image.original_url}}">
+            <img src="{{plant.default_image.original_url}}" width="200" height="200">
               
             </div>
           </div>
-            <a [routerLink]="['/addplant', plant.id]">add this plant</a>
             
             
-            </li>
-            
+          </li>
         </ul>
+        
       </div>
+      <p></p>
+      <button (click)="navigateToGarden()" class="button">Back to Garden</button>
+      <p></p>
       </div>
+    </div>
       
        
-        <button (click)="navigateToGarden()">Back to Garden</button>
+        
         
     
