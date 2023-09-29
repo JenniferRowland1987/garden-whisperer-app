@@ -1,31 +1,61 @@
-.login-container{
-    display: flex;
-    height: 100vh;
-    font-family: Georgia, serif;
-}
 
-.mushroom-container{
-    flex: 1;
-    padding: 20px;
+body {
+    background-image: url('src\assets\cottagecoreinspo.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .login-container {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.login-form-container{
-    flex: 2;
+    height: 100vh;
+  }
+  
+  .center-content {
+    text-align: center;
+  }
+  
+  .form-container {
+    background-color: rgb(118, 157, 92);
+    color: #fff;
+    border-radius: 5px;
     padding: 20px;
-    display: flex;
-    flex-direction: column;
     font-family: Georgia, serif;
-}
-
-.name-container {
-    flex: 3;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    font-size: 100px;
-    
-    font-family: Georgia, serif;
-}
+  }
+  
+  .form-group {
+    margin-bottom: 10px;
+  }
+  
+  .input-container input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .button-container {
+    text-align: center;
+  }
+  
+  .button-container button {
+    padding: 10px 20px;
+    background-color: rgb(118, 157, 92);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .button-container button:hover {
+    background-color: rgb(138, 173, 114);
+  }
