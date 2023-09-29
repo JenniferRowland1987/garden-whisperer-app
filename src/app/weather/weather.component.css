@@ -1,9 +1,10 @@
 .weather-container {
     width: 500px;
-    border: 10px solid goldenrod;
+    border: 10px solid rgb(118, 157, 92);
+    border-radius: 25px;
     padding: 15px;  
     margin: 10px;
-    font-family: Georgia, serif;
-    background-color: gold; 
+    font-family: cursive;
+    background-color: whitesmoke; 
     text-align: center;
   }

@@ -4,35 +4,30 @@
   <h2>About {{plant.nickName}}</h2>
 
   <div *ngIf="plant">
-
     <div *ngIf="plant.imageUrl">
       <img src="{{ plant.imageUrl }}" alt="Plant Image" class="circular-image">
     </div>
-  <div class="boxed-details">
-    <p><strong>Common Name:</strong> {{ plant.commonName }}</p>
-    <p><strong>Nickname:</strong> {{ plant.nickName }}</p>
-    <p><strong>Water Requirements:</strong> {{plant.watering}}</p>
-    <p><strong>Scientific Name:</strong> {{ plant.scienificName }}</p>
-    <p><strong>Sunlight:</strong> {{ plant.sun }}</p>    
-    <p><strong>Date Planted:</strong> {{ plant.datePlanted }}</p>
-    <p><strong>Last Fertlization:</strong> {{ plant.lastFertilization }}</p>
-    <p><strong>Last Water:</strong> {{ plant.lastWater }}</p>
-    <p><strong>Notes:</strong> {{ plant.notes }}</p>
-
-  </div>
-    
+    <div class="boxed-details">
+      <p><strong>Common Name:</strong> {{ plant.commonName }}</p>
+      <p><strong>Nickname:</strong> {{ plant.nickName }}</p>
+      <p><strong>Water Requirements:</strong> {{plant.watering}}</p>
+      <p><strong>Scientific Name:</strong> {{ plant.scienificName }}</p>
+      <p><strong>Sunlight:</strong> {{ plant.sun }}</p>    
+      <p><strong>Date Planted:</strong> {{ plant.datePlanted }}</p>
+      <p><strong>Last Fertlization:</strong> {{ plant.lastFertilization }}</p>
+      <p><strong>Last Water:</strong> {{ plant.lastWater }}</p>
+      <p><strong>Notes:</strong> {{ plant.notes }}</p>
+    </div>
   </div>
 
-  <!-- Handle the case when plant details are not available -->
   <div *ngIf="!plant">
     <p>Plant details not found.</p>
   </div>
-
 </div>
 
 <div class="button-container">
-<button (click)="navigateToGarden()" class="button">Back to Garden</button>
-<button (click)="navigateToEdit()"class="button">Update Plant</button>
-<button (click)="navigateToDoctor()"class="button">EMERGENCY DOCTOR!!!</button>
-<button (click)="deletePlant(plant.id)"class="danger">delete {{plant.nickName}} D:< </button>
+  <button (click)="navigateToGarden()" class="button">Back to Garden</button>
+  <button (click)="navigateToEdit()" class="button">Update Plant</button>
+  <button (click)="navigateToDoctor()" class="button">EMERGENCY DOCTOR!!!</button>
+  <button (click)="deletePlant(plant.id)" class="danger">delete {{plant.nickName}} D:<</button>
 </div>
