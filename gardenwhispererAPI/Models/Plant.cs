@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace gardenwhispererAPI.Models;
@@ -21,7 +21,7 @@ public partial class Plant
 
     public string? Sun { get; set; }
 
-    public DateTime? LastWater { get; set; }
+    public DateTime? LastWater { get; set; } 
 
     public DateTime? LastFertilization { get; set; }
 
