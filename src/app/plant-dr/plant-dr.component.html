@@ -1,13 +1,25 @@
 <body>
 
-<h1>Common Pests found for: {{ commonName }}</h1>
+    <div class="bottom-content">
+      <img [src]="'/assets/doctormushroom.png'" width="150" height="170" class="bottom-image-container"> 
+      <div class="text-container">
+        <p>Oh no! Looks like your {{commonName}} is sick!</p>
+        <p>Here are some possible causes!</p>
+       
+      </div>      
+    </div>
+<div class="center">
+<button (click)="navigateToGarden()" class="button">back to garden!</button>
+</div>
 
-<button (click)="navigateToGarden()">back to garden!</button>
 
-<div class="pest-details" *ngFor="let pest of pests">
-  <h2>{{ pest.common_name }}</h2>
-  <img [src]="pest.images[0].regular_url" alt="{{ pest.common_name }} Image" class="pest-image"/>
-
+<div class="pest-container">
+  <div class="pest-details" *ngFor="let pest of pests">
+    <ng-container *ngIf="pest.images && pest.images.length > 0">
+    <div class="pest-card">
+      <h2>{{ pest.common_name }}</h2>
+      <img [src]="pest.images[0].regular_url" alt="{{ pest.common_name }} Image" class="pest-image" />
+      
   <h3>Description:</h3>
   <ul>
     <li *ngFor="let description of pest.description">{{ description.description }}</li>
@@ -17,11 +29,15 @@
   <ul>
     <li *ngFor="let solution of pest.solution">{{ solution.description }}</li>
   </ul>
+
+    </div>
+  </ng-container>
+  </div>
 </div>
 
-<button (click)="navigateToGarden()">back to garden!</button>
-
-
+<div class="center">
+<button (click)="navigateToGarden()" class="button">back to garden!</button>
+</div>
 
 </body>
 
