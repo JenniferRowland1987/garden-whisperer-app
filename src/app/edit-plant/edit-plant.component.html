@@ -1,23 +1,21 @@
-<div class="center">
+<div class="center-content">
     <h1>Edit Plant</h1>
-    
-
-
-    <form (ngSubmit)="onSubmit()">
-        <div class="">
-            <h2></h2>
-            <label for="notes">Nickname:</label>
-            <textarea id="nickname" [(ngModel)]="editPlant.nickName" name="nickname"></textarea>
-            <label for="notes">Notes:</label>
-            <textarea id="notes" [(ngModel)]="editPlant.notes" name="notes"></textarea>
-            <label for="lastwater">Last Water:</label>
-            <textarea id="lastwater" [(ngModel)]="editPlant.lastWater" name="lastwater"></textarea>
-            <label for="lastfertilization">Last Fertlization:</label>
-            <textarea id="lastfertilization" [(ngModel)]="editPlant.lastFertilization" name="lastfertilization"></textarea>
-            <button type="submit" class="btn btn-primary">Save</button>
-        </div>
-        
+  
+    <form (ngSubmit)="onSubmit()" class="form-container">
+      <div class="boxed-details">
+        <label for="nickname">Nickname:</label>
+        <input type="text" id="nickname" [(ngModel)]="editPlant.nickName" name="nickname">
+        <label for="notes">Notes:</label>
+        <textarea id="notes" [(ngModel)]="editPlant.notes" name="notes"></textarea>
+        <label for="lastwater">Last Water:</label>
+        <input type="text" id="lastwater" [(ngModel)]="editPlant.lastWater" name="lastwater">
+        <label for="lastfertilization">Last Fertilization:</label>
+        <input type="text" id="lastfertilization" [(ngModel)]="editPlant.lastFertilization" name="lastfertilization">
+        <button type="submit" class="btn btn-primary">Save</button>
+      </div>
     </form>
-    <button (click)="navigateToGarden()">back to garden!</button>
-    <button (click)="navigateToDoctor()">PLANT DOCTOR!</button>
-</div>
+  
+    <button (click)="navigateToGarden()" class="button">Back to Garden</button>
+    <button (click)="navigateToDoctor()" class="button">PLANT DOCTOR!</button>
+  </div>
+  
