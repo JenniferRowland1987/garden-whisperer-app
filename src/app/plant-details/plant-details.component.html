@@ -1,9 +1,11 @@
+
+
 <div class="center-content">
   <h2>About {{plant.nickName}}</h2>
-
+  
   <div *ngIf="plant">
     <div *ngIf="plant.imageUrl">
-      <img src="{{ plant.imageUrl }}" alt="Plant Image" class="circular-image">
+      <img src="{{ plant.imageUrl }}"  alt="Plant Image" class="circular-image">
     </div>
     <div class="boxed-details">
       <p><strong>Common Name:</strong> {{ plant.commonName }}</p>
@@ -18,17 +20,17 @@
       
     
       <p>
-        <strong>Water Status:</strong>
+        
         <span *ngIf="waterMessage">
-          <img src="/assets/watermushroom.png" alt="Water Image" class="status-image"> 
+          <img src="/assets/watermushroom.png" width="150" height="170" alt="Water Image" class="status-image"> 
           {{ waterMessage }}
         </span>
       </p>
 
       <p>
-        <strong>Fertilization Status:</strong>
+        
         <span *ngIf="fertilizeMessage">
-          <img src="src/assets/watermushroom.png" alt="Fertilization Image" class="status-image">
+          <img src="src/assets/watermushroom.png" width="150" height="170" alt="Fertilization Image" class="status-image">
           {{ fertilizeMessage }}
         </span>
       </p>

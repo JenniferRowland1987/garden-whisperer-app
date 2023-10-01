@@ -1,21 +1,26 @@
 <div class="center-content">
-    <h1>Edit Plant</h1>
-  
-    <form (ngSubmit)="onSubmit()" class="form-container">
-      <div class="boxed-details">
-        <label for="nickname">Nickname:</label>
-        <input type="text" id="nickname" [(ngModel)]="editPlant.nickName" name="nickname">
-        <label for="notes">Notes:</label>
-        <textarea id="notes" [(ngModel)]="editPlant.notes" name="notes"></textarea>
-        <label for="lastwater">Last Water:</label>
-        <input type="text" id="lastwater" [(ngModel)]="editPlant.lastWater" name="lastwater">
-        <label for="lastfertilization">Last Fertilization:</label>
-        <input type="text" id="lastfertilization" [(ngModel)]="editPlant.lastFertilization" name="lastfertilization">
-        <button type="submit" class="btn btn-primary">Save</button>
-      </div>
-    </form>
-  
-    <button (click)="navigateToGarden()" class="button">Back to Garden</button>
-    <button (click)="navigateToDoctor()" class="button">PLANT DOCTOR!</button>
-  </div>
-  
+  <h1>Edit Plant</h1>
+
+  <form (ngSubmit)="onSubmit()" class="form-container">
+    <div class="boxed-details">
+      <label for="nickname">Nickname:</label>
+      <input type="text" id="nickname" [(ngModel)]="editPlant.nickName" name="nickname">
+
+      <label for="notes">Notes:</label>
+      <textarea id="notes" [(ngModel)]="editPlant.notes" name="notes"></textarea>
+
+      <label for="lastwater">Last Water:</label>
+      <input type="date" id="lastwater" [ngModel]="editPlant.lastWater | date:'yyyy-MM-dd'" (ngModelChange)="editPlant.lastWater = $event" name="lastwater">
+      <!-- The [ngModel] binds the date string, and (ngModelChange) updates the model property when the date changes. -->
+
+      <label for="lastfertilization">Last Fertilization:</label>
+      <input type="date" id="lastfertilization" [ngModel]="editPlant.lastFertilization | date:'yyyy-MM-dd'" (ngModelChange)="editPlant.lastFertilization = $event" name="lastfertilization">
+      <!-- Similar setup for "Last Fertilization." -->
+
+      <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+  </form>
+
+  <button (click)="navigateToGarden()" class="button">Back to Garden</button>
+  <button (click)="navigateToDoctor()" class="button">PLANT DOCTOR!</button>
+</div>
