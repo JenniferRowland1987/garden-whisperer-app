@@ -3,27 +3,37 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh; /* Center within the viewport */
+  height: 100vh; 
 }
 
 .boxed-details {
   border: 1px solid #ccc;
   padding: 20px;
   text-align: center;
-  background-color: rgb(118, 157, 92); /* Green background color */
-  color: #fff; /* White text color */
-  border-radius: 5px; /* Rounded corners */
+  background-color: rgb(118, 157, 92); 
+  color: #fff; 
+  border-radius: 5px; 
   margin: 10px;
+  position: relative; 
 }
 
 .circular-image {
   border-radius: 50%;
   overflow: hidden;
-  width: 400px; /* Adjust the size as needed */
-  height: 400px; /* Adjust the size as needed */
+  width: 400px; 
+  height: 400px; 
   margin-top: 10px;
 }
 
+.message-bubble {
+  position: absolute;
+  top: -20px; 
+  right: -20px; 
+  background-color: rgb(227, 22, 22); 
+  color: #fff; 
+  padding: 5px 10px; 
+  border-radius: 5px; 
+}
 
 .button {
   margin-top: 10px;
@@ -36,19 +46,18 @@
   text-transform: uppercase;
   font-weight: bold;
 
-  &:hover{
-    background-color: rgb(138, 173, 114);
-  }
+  &:hover {
+    background-color: rgb(138, 173, 114); 
 }
 
 .button-container {
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
+  justify-content: center; 
+  align-items: center; 
   margin-top: 20px;
 }
 
-.danger{
+.danger {
   margin-top: 10px;
   padding: 10px 20px;
   background-color: rgb(118, 157, 92);
@@ -59,7 +68,7 @@
   text-transform: uppercase;
   font-weight: bold;
 
-  &:hover{
+  &:hover {
     background-color: rgb(227, 22, 22);
   }
 }
@@ -67,14 +76,15 @@
 h2 {
   margin-top: 10px;
   padding: 10px 20px;
-  background-color: rgb(118, 157, 92); 
-  color: #fff; 
-  border: darkgreen; 
-  border-radius: 5px; 
+  background-color: rgb(118, 157, 92);
+  color: #fff;
+  border: darkgreen;
+  border-radius: 5px;
   text-transform: uppercase;
   font-weight: bold;
 
   &:hover {
-    background-color: rgb(138, 173, 114); /* Hover background color */
+    background-color: rgb(138, 173, 114); 
   }
+}
 }

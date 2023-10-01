@@ -1,5 +1,3 @@
-
-
 <div class="center-content">
   <h2>About {{plant.nickName}}</h2>
 
@@ -14,9 +12,26 @@
       <p><strong>Scientific Name:</strong> {{ plant.scienificName }}</p>
       <p><strong>Sunlight:</strong> {{ plant.sun }}</p>    
       <p><strong>Date Planted:</strong> {{ plant.datePlanted }}</p>
-      <p><strong>Last Fertlization:</strong> {{ plant.lastFertilization }}</p>
+      <p><strong>Last Fertilization:</strong> {{ plant.lastFertilization }}</p>
       <p><strong>Last Water:</strong> {{ plant.lastWater }}</p>
       <p><strong>Notes:</strong> {{ plant.notes }}</p>
+      
+    
+      <p>
+        <strong>Water Status:</strong>
+        <span *ngIf="waterMessage">
+          <img src="assets/water-image.png" alt="Water Image" class="status-image"> 
+          {{ waterMessage }}
+        </span>
+      </p>
+
+      <p>
+        <strong>Fertilization Status:</strong>
+        <span *ngIf="fertilizeMessage">
+          <img src="assets/fertilize-image.png" alt="Fertilization Image" class="status-image">
+          {{ fertilizeMessage }}
+        </span>
+      </p>
     </div>
   </div>
 
