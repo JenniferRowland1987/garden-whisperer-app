@@ -4,9 +4,9 @@
       <h2>Current temperature {{ weatherData.current.temp_f }} °F</h2>
       <p></p>
       <h2>{{ message }}</h2>
-      <img *ngIf="isCloudy()" src="/assets/justcloud.png" alt="Cloud Image">
-      <img *ngIf="isPartiallyCloudy()" src="/assets/partialcloud.png" alt="Partial Cloud Image">
-      <img *ngIf="isRainy()" src="/assets/raincloud.png" alt="Rain Image">
+      <img *ngIf="isCloudy()" src="/assets/justcloud.png" width="300" height="300"  alt="Cloud Image">
+      <img *ngIf="isPartiallyCloudy()" src="/assets/partialcloud.png" width="300" height="300"   alt="Partial Cloud Image">
+      <img *ngIf="isRainy()" src="/assets/raincloud.png" width="300" height="300"  alt="Rain Image">
 
     </div>
   </div>
