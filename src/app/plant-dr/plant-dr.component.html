@@ -15,7 +15,8 @@
 
 <div class="pest-container">
   <div class="pest-details" *ngFor="let pest of pests">
-    <ng-container *ngIf="pest.images && pest.images.length > 0">
+    <ng-container *ngIf="pest.images && pest.images.length > 0 && pest.description && pest.description.length > 0 && pest.solution && pest.solution.length > 0">
+      
     <div class="pest-card">
       <h2>{{ pest.common_name }}</h2>
       <img [src]="pest.images[0].regular_url" alt="{{ pest.common_name }} Image" class="pest-image" />

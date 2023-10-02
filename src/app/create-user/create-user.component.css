@@ -46,14 +46,15 @@
   
   .image-container {
     flex: 0; 
+   
     
   }
   
   .image-container img {
     
-    width: 50%;
+    width: 25%;
     height: auto;
-    display: block;
+    
   }
 
   .welcome-image {
@@ -64,4 +65,18 @@
   .welcome-image img {
     width: 100%; 
     height: auto;
+  }
+  .bottom-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Adjust margin as needed */
+  }
+  .text-container {
+    background-color: #f0f0f0; 
+    padding: 10px;
+    border-radius: 10px;
+    font-family: cursive;
+    color: green;
+    text-align: center;
   }

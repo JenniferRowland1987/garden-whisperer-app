@@ -1,16 +1,18 @@
-<div>
-    <h1>Add a Plant to Your Garden</h1>
-  
-   
-    <h2>Plant Details</h2>
+<div class="center-content">
+  <h1>Add a Plant to Your Garden</h1>
+
+  <h2 class="message-bubble">Plant Details</h2>
+  <div class="boxed-details">
     <p><strong>Common Name:</strong> {{ plant.common_name }}</p>
     <p><strong>Scientific Name:</strong> {{ plant.scientific_name }}</p>
     <p><strong>Cycle:</strong> {{ plant.cycle }}</p>
     <p><strong>Watering:</strong> {{ plant.watering }}</p>
     <p><strong>Sunlight:</strong> {{ plant.sunlight.join(', ') }}</p>
-    
-    <h2>Add Plant to Garden</h2>
-    <form (ngSubmit)="onSubmit()" #plantForm="ngForm">
+  </div>
+
+  <h2 class="message-bubble">Add Plant to Garden</h2>
+  <form (ngSubmit)="onSubmit()" #plantForm="ngForm">
+    <div class="boxed-details">
       <div class="form-group">
         <label for="nickName">Nickname</label>
         <input type="text" id="nickName" name="nickName" [(ngModel)]="newPlant.nickName" required>
@@ -35,13 +37,15 @@
         <label for="isHealthy">Is Healthy</label>
         <input type="checkbox" id="isHealthy" name="isHealthy" [(ngModel)]="newPlant.isHealthy">
       </div>
-      
-      <input type="hidden" name="plantId" [(ngModel)]="plant.id">
-     
-  
-      <button type="submit" class="btn btn-primary">Add Plant to Garden</button>
-    </form>
 
+      <input type="hidden" name="plantId" [(ngModel)]="plant.id">
+      
+      <button type="submit" class="btn btn-primary">Add Plant to Garden</button>
+    </div>
+  </form>
+
+  <button (click)="navigateToGarden()" class="button">Back to Garden</button>
+</div>
 
 
 <!--

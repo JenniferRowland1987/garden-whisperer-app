@@ -17,6 +17,8 @@ import { UserService } from '../user.service';
 export class PlantDetailsComponent {
   plantInfo: number = 0;
   plant: any;
+  waterMessage: string = ''; // Message for watering
+  fertilizeMessage: string = ''; // Message for fertilization
 
   constructor(
     private gardenService:GardenService,
@@ -25,9 +27,6 @@ export class PlantDetailsComponent {
     private route: ActivatedRoute,
     private router: Router,
     private user: UserService
-
- 
-
 
     ){}
 
@@ -47,22 +46,23 @@ export class PlantDetailsComponent {
 
 
     getPlantDetails() {
-      console.log("get plant details")
-      this.gardenService.getPlant(this.plantInfo).subscribe((plants) => { 
+      console.log('get plant details');
+      this.gardenService.getPlant(this.plantInfo).subscribe((plants) => {
         //console.log(`plants: ${JSON.stringify(plants)}`);
         this.plant = plants;
-          const perenualId = this.plant.perenualId;
-          if (perenualId) {
-            this.plantService.getPlantById(perenualId).subscribe((data) => {
-              //console.log(`data: ${JSON.stringify(data)}`);
-              plants.imageUrl = data.default_image?.regular_url;
-              plants.watering = data.watering;
-              plants.sunlight = data.sunlight;
-              
-            });
-          }
+        const perenualId = this.plant.perenualId;
+        if (perenualId) {
+          this.plantService.getPlantById(perenualId).subscribe((data) => {
+            //console.log(`data: ${JSON.stringify(data)}`);
+            plants.imageUrl = data.default_image?.regular_url;
+            plants.watering = data.watering;
+            plants.sunlight = data.sunlight;
+          });
+        }
+        this.checkWateringStatus();
+        this.checkFertilizationStatus();
       });
-  }
+    }
 
   deletePlant(plantId: number) {
     this.gardenService.deletePlant(plantId).subscribe(
@@ -87,17 +87,28 @@ export class PlantDetailsComponent {
   navigateToDoctor(){
     this.router.navigate(['/plant-dr', this.plant.commonName]);
   }
+
+  checkWateringStatus() {
+    const lastWaterDate: Date = new Date(this.plant.lastWater);
+    const currentDate: Date = new Date();
+    const daysSinceLastWater: number = Math.floor(
+      (currentDate.getTime() - lastWaterDate.getTime()) / (1000 * 60 * 60 * 24)
+    );
+
+    if (daysSinceLastWater > 14) {
+      this.waterMessage = 'It is time to water your plant!';
+    }
 }
 
-/*export class perenualPlant {
-  id: number = 0;
-  common_name: string = '';
-  scientific_name: string[] = [];
-  other_name: string[] = [];
-  cycle: string = '';
-  watering: string = '';
-  sunlight: string[] = [];
+checkFertilizationStatus() {
+    const lastFertilizationDate: Date = new Date(this.plant.lastFertilization);
+    const currentDate: Date = new Date();
+    const monthsSinceLastFertilization: number =
+      currentDate.getMonth() - lastFertilizationDate.getMonth() +
+      12 * (currentDate.getFullYear() - lastFertilizationDate.getFullYear());
 
-
+    if (monthsSinceLastFertilization >= 3) {
+      this.fertilizeMessage = 'It is time to fertilize your plant!';
+    }
 }
-*/
+}
