@@ -1,13 +1,20 @@
 <div class="weather-container">
+  <div class="content">
+    <div class="container">
+    <div class="text-container">
     <div *ngIf="weatherData">
       <h1>Weather for {{ city }}</h1>
-      <h2>Current temperature {{ weatherData.current.temp_f }} °F</h2>
+      <h2>Current temperature: {{ weatherData.current.temp_f }} °F</h2>
       <p></p>
       <h2>{{ message }}</h2>
-      <img *ngIf="isCloudy()" src="/assets/justcloud.png" width="300" height="300"  alt="Cloud Image">
-      <img *ngIf="isPartiallyCloudy()" src="/assets/partialcloud.png" width="300" height="300"   alt="Partial Cloud Image">
-      <img *ngIf="isRainy()" src="/assets/raincloud.png" width="300" height="300"  alt="Rain Image">
-
+    </div>
+    <div class="image-container">
+      <img *ngIf="isCloudy()" src="/assets/justcloud.png" width="150" height="100"  alt="Cloud Image">
+      <img *ngIf="isPartiallyCloudy()" src="/assets/partialcloud.png" width="150" height="100"   alt="Partial Cloud Image">
+      <img *ngIf="isRainy()" src="/assets/raincloud.png" width="150" height="100"  alt="Rain Image">
+    </div>
+  </div>
+    </div>
     </div>
   </div>
   
