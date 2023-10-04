@@ -1,0 +1,59 @@
+h1 {
+    font-size: 24px;
+    color: #fff;
+    background-color: rgb(118, 157, 92);
+    padding: 10px 20px;
+    margin-bottom: 20px; /* Add margin to separate from other content */
+  }
+  
+
+  h2 {
+    font-size: 24px;
+    color: #fff;
+    background-color: rgb(118, 157, 92);
+    padding: 10px 20px;
+  }
+
+  .form-group {
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+    background-color: rgb(118, 157, 92);
+    color: #fff;
+    border-radius: 5px;
+    margin: 10px auto; /* Center the form container horizontally and add spacing */
+    max-width: 400px; /* Limit the maximum width of the form container */
+  }
+
+  .btn-primary {
+    padding: 10px 20px;
+    background-color: rgb(118, 157, 92);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: rgb(118, 157, 92);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  
+  /* Style the checkbox */
+  .form-group label[for="isHealthy"] {
+    display: flex;
+    align-items: center;
+  }
+  
+  .form-group label[for="isHealthy"] input[type="checkbox"] {
+    margin-right: 5px;
+  }
